@@ -44,6 +44,7 @@ var (
 		"fish":       true,
 		"powershell": true,
 		"zsh":        true,
+		"version":    true,
 	}
 	validArgs = []string{"get"}
 	rootCmd   = &cobra.Command{
