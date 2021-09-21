@@ -11,10 +11,10 @@ import (
 
 var (
 	getDatabaseCmd = &cobra.Command{
-		Use:     "databases [DATABASE]",
-		Aliases: []string{"database"},
+		Use:     DATABASES + " [DATABASE]",
+		Aliases: []string{DATABASE},
 		Short:   "Retrieve database information",
-		Long:    `Queries for information about deployed database resources in SkySQL. Specify a single database using the database id (e.g. db00000000)`,
+		Long:    "Queries for information about deployed database resources in SkySQL. " + HINT_DB_ID,
 		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			var res *http.Response

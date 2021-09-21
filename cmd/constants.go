@@ -31,3 +31,8 @@ const (
 	QUOTA  = "quota"
 	QUOTAS = "quotas"
 )
+
+// hints
+const (
+	HINT_DB_ID = "Specify a database using the database id (e.g. db00000000)"
+)

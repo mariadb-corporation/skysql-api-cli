@@ -16,7 +16,7 @@ var (
 	size              string
 	storage           string
 	maxscaleConfig    string
-	name              string
+	createDbName      string
 	region            string
 	replRegion        string
 	provider          string
@@ -79,7 +79,7 @@ func init() {
 	createDatabaseCmd.Flags().StringVarP(&maxscaleConfig, "maxscale-config", "m", "", "Configurations for maxscale")
 	viper.BindPFlag("maxscale_config", createDatabaseCmd.Flags().Lookup("maxscale-config"))
 
-	createDatabaseCmd.Flags().StringVarP(&name, "name", "n", "", "Name used to identify the database")
+	createDatabaseCmd.Flags().StringVarP(&createDbName, "name", "n", "", "Name used to identify the database")
 	viper.BindPFlag("name", createDatabaseCmd.Flags().Lookup("name"))
 
 	createDatabaseCmd.Flags().StringVarP(&region, "region", "", "r", "Geographic region to deploy the database")
