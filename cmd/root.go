@@ -22,20 +22,15 @@ type tokenResponse struct {
 	Token string `json:"token"`
 }
 
-func checkErr(err interface{}, msg string, code ...int) {
+func checkErr(err interface{}, msg string) {
 	if err != nil {
-		crash(fmt.Sprintf(msg+": %v", err), code...)
+		crash(fmt.Sprintf(msg+": %v", err))
 	}
 }
 
-func crash(msg string, code ...int) {
-	status := code[0]
-	if status == 0 {
-		status = 1
-	}
-
+func crash(msg string) {
 	fmt.Fprintln(os.Stderr, "Error:", msg)
-	os.Exit(status)
+	os.Exit(1)
 }
 
 var (
