@@ -1,3 +1,15 @@
+# v0.0.2 (Tue Sep 21 2021)
+
+#### 🚀 Enhancement
+
+- DBAAS-7920: GET Billing [#6](https://github.com/mariadb-corporation/skysql-api-cli/pull/6) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.1 (Tue Sep 21 2021)
 
 #### 💥 Breaking Change
