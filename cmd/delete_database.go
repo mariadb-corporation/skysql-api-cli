@@ -1,10 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-
 	"github.com/spf13/cobra"
 )
 
@@ -19,17 +15,7 @@ var (
 
 			res, err := client.DeleteDatabase(cmd.Context(), dbid)
 
-			checkErr(err, "unable to delete database")
-			defer res.Body.Close()
-
-			body, err := ioutil.ReadAll(res.Body)
-			checkErr(err, "unable to read response from MariaDB SkySQL")
-
-			if res.StatusCode != http.StatusOK {
-				crash(fmt.Sprintf("unable to delete database: Status: %v, Body: %v", res.StatusCode, string(body)))
-			}
-
-			fmt.Println(string(body))
+			checkAndPrint(res, err, DATABASES)
 		},
 	}
 )

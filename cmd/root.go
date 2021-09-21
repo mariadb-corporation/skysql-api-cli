@@ -33,6 +33,20 @@ func crash(msg string) {
 	os.Exit(1)
 }
 
+func checkAndPrint(res *http.Response, err error, entityName string) {
+	checkErr(err, fmt.Sprintf("unable to retrieve %s from SkySQL", entityName))
+	defer res.Body.Close()
+
+	body, err := ioutil.ReadAll(res.Body)
+	checkErr(err, "unable to read response from SkySQL")
+
+	if res.StatusCode != http.StatusOK {
+		crash(fmt.Sprintf("unable to retrieve %s from SkySQL: Status: %v, Body: %v", entityName, res.StatusCode, string(body)))
+	}
+
+	fmt.Println(string(body))
+}
+
 var (
 	cfgFile  string
 	apiKey   string

@@ -1,10 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -46,17 +42,7 @@ var (
 
 			res, err := client.CreateDatabase(cmd.Context(), reqBody)
 
-			checkErr(err, "unable to create database")
-			defer res.Body.Close()
-
-			body, err := ioutil.ReadAll(res.Body)
-			checkErr(err, "unable to read response from MariaDB SkySQL")
-
-			if res.StatusCode != http.StatusOK {
-				crash(fmt.Sprintf("unable to create database: Status: %v, Body: %v", res.StatusCode, string(body)))
-			}
-
-			fmt.Println(string(body))
+			checkAndPrint(res, err, DATABASES)
 		},
 	}
 )

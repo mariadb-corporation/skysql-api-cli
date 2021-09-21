@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-	"io/ioutil"
 	"net/http"
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
@@ -27,18 +25,7 @@ var (
 					Limit: &limit,
 				})
 			}
-
-			checkErr(err, "unable to retrieve databases from SkySQL")
-			defer res.Body.Close()
-
-			body, err := ioutil.ReadAll(res.Body)
-			checkErr(err, "unable to read response from SkySQL")
-
-			if res.StatusCode != http.StatusOK {
-				crash(fmt.Sprintf("unable to retrieve databases from SkySQL: Status: %v, Body: %v", res.StatusCode, string(body)))
-			}
-
-			fmt.Println(string(body))
+			checkAndPrint(res, err, DATABASES)
 		},
 	}
 )
