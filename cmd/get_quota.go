@@ -10,8 +10,8 @@ import (
 
 var (
 	getQuotaCmd = &cobra.Command{
-		Use:     QUOTA,
-		Aliases: []string{QUOTAS},
+		Use:     QUOTAS,
+		Aliases: []string{QUOTA},
 		Short:   "Retrieve quota information",
 		Long:    `Queries for quota limits, and progress towards those quotas.`,
 		Args:    cobra.MaximumNArgs(0),
