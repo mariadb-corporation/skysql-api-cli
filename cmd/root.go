@@ -22,15 +22,20 @@ type tokenResponse struct {
 	Token string `json:"token"`
 }
 
-func checkErr(err interface{}, msg string) {
+func checkErr(err interface{}, msg string, code ...int) {
 	if err != nil {
-		crash(fmt.Sprintf(msg+": %v", err))
+		crash(fmt.Sprintf(msg+": %v", err), code...)
 	}
 }
 
-func crash(msg string) {
-	fmt.Fprintln(os.Stderr, "Error: "+msg)
-	os.Exit(1)
+func crash(msg string, code ...int) {
+	status := code[0]
+	if status == 0 {
+		status = 1
+	}
+
+	fmt.Fprintln(os.Stderr, "Error:", msg)
+	os.Exit(status)
 }
 
 var (
@@ -137,10 +142,10 @@ func initConfig() {
 		// Search config in home directory with name ".skysqlcli" (without extension).
 		viper.AddConfigPath(home)
 		viper.SetConfigType("yaml")
-		viper.SetConfigName(".skysqlcli")
+		viper.SetConfigName(fmt.Sprintf(".%s", CLI_NAME))
 	}
 
-	viper.SetEnvPrefix("skysql")
+	viper.SetEnvPrefix(PROJECT_NAME)
 	viper.AutomaticEnv() // read in environment variables that match
 
 	// If a config file is found, read it in.
