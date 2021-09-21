@@ -10,21 +10,21 @@ import (
 
 var (
 	getQuotaCmd = &cobra.Command{
-		Use:     "quota",
-		Aliases: []string{"quotas"},
+		Use:     QUOTA,
+		Aliases: []string{QUOTAS},
 		Short:   "Retrieve quota information",
 		Long:    `Queries for quota limits, and progress towards those quotas.`,
 		Args:    cobra.MaximumNArgs(0),
 		Run: func(cmd *cobra.Command, args []string) {
 			res, err := client.ReadQuotas(cmd.Context())
-			checkErr(err, "unable to retrieve databases from SkySQL")
+			checkErr(err, fmt.Sprintf("unable to retrieve %s from SkySQL", QUOTAS))
 			defer res.Body.Close()
 
 			body, err := ioutil.ReadAll(res.Body)
 			checkErr(err, "unable to read response from SkySQL")
 
 			if res.StatusCode != http.StatusOK {
-				crash(fmt.Sprintf("unable to retrieve databases from SkySQL: Status: %v, Body: %v", res.StatusCode, string(body)))
+				crash(fmt.Sprintf("unable to retrieve %s from SkySQL: Status: %v, Body: %v", QUOTAS, res.StatusCode, string(body)))
 			}
 
 			fmt.Println(string(body))

@@ -50,9 +50,9 @@ var (
 		"powershell": true,
 		"zsh":        true,
 	}
-	validArgs = []string{"get"}
+	validArgs = []string{GET}
 	rootCmd   = &cobra.Command{
-		Use:       "skysqlcli",
+		Use:       CLI_NAME,
 		Short:     "CLI client to interact with the SkySQL API",
 		Long:      `A command line tool for managing resources deployed into MariaDB SkySQL`,
 		ValidArgs: validArgs,
@@ -121,8 +121,8 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default $HOME/.skysqlcli.yaml)")
 	rootCmd.PersistentFlags().StringVar(&apiKey, "api-key", "", "Long-lived JWT issued from MariaDB ID")
-	rootCmd.PersistentFlags().StringVar(&host, "host", "https://api.dev.gcp.mariadb.net", "URL for the SkySQL API")
-	rootCmd.PersistentFlags().StringVar(&mdbid, "mdbid", "https://id-dev.mariadb.com", "URL for MariaDB ID")
+	rootCmd.PersistentFlags().StringVar(&host, "host", SKYSQL_API, "URL for the SkySQL API")
+	rootCmd.PersistentFlags().StringVar(&mdbid, "mdbid", MARIADB_ID, "URL for MariaDB ID")
 
 	viper.BindPFlag("api_key", rootCmd.PersistentFlags().Lookup("api-key"))
 	viper.BindPFlag("host", rootCmd.PersistentFlags().Lookup("host"))
