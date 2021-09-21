@@ -4,7 +4,6 @@ on:
     branches:
       - main
 jobs:
-
   artifacts:
     name: Build artifacts
     runs-on: ${{ matrix.os }}
@@ -53,7 +52,6 @@ jobs:
       - name: Build
         run: |
           go build -ldflags "-X github.com/mariadb-corporation/skysqlcli/cmd.Version=$(auto release -d | grep -Po ' Would have created a release on GitHub for version: \K[^ ]+')" -o ${{ matrix.artifact }} .
-
   release:
     name: Publish new release
     runs-on: ubuntu-latest
