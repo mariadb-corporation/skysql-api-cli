@@ -49,6 +49,7 @@ var (
 		"fish":       true,
 		"powershell": true,
 		"zsh":        true,
+		"version":    true,
 	}
 	validArgs = []string{"get"}
 	rootCmd   = &cobra.Command{
@@ -74,7 +75,7 @@ var (
 			}
 			url.Path = path.Join(url.Path, "/api/v1/token")
 
-			req, _ := http.NewRequest("GET", url.String(), nil)
+			req, _ := http.NewRequest("POST", url.String(), nil)
 			req.Header.Add("Authorization", "Token "+apiKey)
 
 			httpClient := &http.Client{}

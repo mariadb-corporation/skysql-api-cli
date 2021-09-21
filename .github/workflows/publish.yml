@@ -1,0 +1,95 @@
+name: Publish
+on:
+  push:
+    branches:
+      - main
+jobs:
+  artifacts:
+    name: Build artifacts
+    runs-on: ${{ matrix.os }}
+    env:
+      GOPRIVATE: github.com/mariadb-corporation
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            name: linux
+            artifact: skysqlcli-linux
+          - os: macos-latest
+            name: macos
+            artifact: skysqlcli-macos
+          - os: windows-latest
+            name: windows
+            artifact: skysqlcli-windows.exe
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v2
+        with: # https://stackoverflow.com/a/65081720
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: "0"
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+      - name: Install Auto
+        run : npm i -g auto
+      - name: Configure git for private repos
+        run : |
+          git config --global url."https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/mariadb-corporation".insteadOf "https://github.com/mariadb-corporation"
+      - name: Install Deps
+        run : make deps
+      - name: "Use GNU tar instead BSD tar" # https://github.com/actions/cache/issues/591#issuecomment-845132253
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+      - name: Cache binary
+        id: cache-binary
+        uses: actions/cache@v2
+        with:
+          path: ${{ matrix.artifact }}
+          key: ${{ matrix.name }}-binary-${{ github.sha }}
+      - name: Build
+        run: |
+          go build -ldflags "-X github.com/mariadb-corporation/skysqlcli/cmd.Version=$(auto release -d | grep -Po ' Would have created a release on GitHub for version: \K[^ ]+')" -o ${{ matrix.artifact }} .
+  release:
+    name: Publish new release
+    runs-on: ubuntu-latest
+    needs: [artifacts]
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v2
+        with: # https://stackoverflow.com/a/65081720
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: "0"
+      - name: Install Auto
+        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels
+      - name: linux binary
+        id: linux-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-linux
+          key: linux-binary-${{ github.sha }}
+      - name: macos binary
+        id: macos-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-macos
+          key: macos-binary-${{ github.sha }}
+      - name: windows binary
+        id: windows-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-windows.exe
+          key: windows-binary-${{ github.sha }}
+      - name: Configure git
+        run: |
+          git config --global user.email "no-reply@mariadb.com"
+          git config --global user.name "SkySQL API Golang SDK Release Pipeline"
+      - name: Publish new version
+        run: GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" auto shipit
+      - id: version
+        name: Output new version
+        run: echo "::set-output name=version::$(git describe --tags)"
