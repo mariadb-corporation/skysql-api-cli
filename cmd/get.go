@@ -6,12 +6,11 @@ import (
 )
 
 var (
-	limit         int
 	getValidArgs  = []string{DATABASES, QUOTAS}
 	getArgAliases = []string{DATABASE, QUOTA}
 	getCmd        = &cobra.Command{
 		Use:        GET,
-		Short:      "Query SkySQL for resource information",
+		Short:      "Query MariaDB SkySQL for resource information",
 		Long:       `Commands which retrieve data about resources deployed into MariaDB SkySQL`,
 		ValidArgs:  getValidArgs,
 		ArgAliases: getArgAliases,
@@ -21,6 +20,6 @@ var (
 func init() {
 	rootCmd.AddCommand(getCmd)
 
-	getDatabaseCmd.PersistentFlags().IntVarP(&limit, "limit", "l", 10, "Number of records to return")
-	viper.BindPFlag("limit", getDatabaseCmd.PersistentFlags().Lookup("limit"))
+	getCmd.PersistentFlags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Number of records to return")
+	viper.BindPFlag("limit", getCmd.PersistentFlags().Lookup("limit"))
 }

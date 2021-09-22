@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/deepmap/oapi-codegen v1.8.2
-	github.com/mariadb-corporation/skysql-api-go v0.0.3
+	github.com/mariadb-corporation/skysql-api-go v0.0.4
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.8.1
 )
