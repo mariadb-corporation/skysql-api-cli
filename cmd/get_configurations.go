@@ -2,21 +2,23 @@ package cmd
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var (
 	getConfigurationCmd = &cobra.Command{
-		Use:     "configurations [CONFIGURATION NUMBER]",
-		Aliases: []string{"configuration"},
-		Short:   "Retrieve stored configurations",
-		Long:    `Retrieves one or more custom configurations owned by the user`,
+		Use:     fmt.Sprintf("%s [CONFIGURATION NUMBER]", CONFIGURATIONS),
+		Aliases: []string{CONFIGURATION},
+		Short:   fmt.Sprintf("Retrieve stored %s configurations", DATABASE),
+		Long:    fmt.Sprintf("Retrieves one or more custom %s configurations owned by the user", DATABASE),
 		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
+			limit := viper.GetInt(LIMIT)
+
 			var res *http.Response
 			var err error
 			if len(args) == 1 {
@@ -28,21 +30,14 @@ var (
 				})
 			}
 
-			checkErr(err, "unable to retrieve configurations from SkySQL")
-			defer res.Body.Close()
-
-			body, err := ioutil.ReadAll(res.Body)
-			checkErr(err, "unable to read response from SkySQL")
-
-			if res.StatusCode != http.StatusOK {
-				crash(fmt.Sprintf("unable to retrieve configurations from SkySQL: Status: %v, Body: %v", res.StatusCode, string(body)))
-			}
-
-			fmt.Println(string(body))
+			checkAndPrint(res, err, CONFIGURATIONS)
 		},
 	}
 )
 
 func init() {
 	getCmd.AddCommand(getConfigurationCmd)
+
+	getConfigurationCmd.Flags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Maximum number of configurations to retrieve")
+	viper.BindPFlag(LIMIT, createDatabaseCmd.Flags().Lookup(LIMIT))
 }

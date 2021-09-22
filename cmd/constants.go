@@ -22,15 +22,16 @@ const (
 
 // Entities
 const (
-	DATABASE  = "database"
-	DATABASES = "databases"
+	CONFIGURATION  = "configuration"
+	CONFIGURATIONS = "configurations"
+	DATABASE       = "database"
+	DATABASES      = "databases"
+	QUOTA          = "quota"
+	QUOTAS         = "quotas"
 )
 
 // Commands
-const (
-	QUOTA  = "quota"
-	QUOTAS = "quotas"
-)
+const ()
 
 // hints
 const (
@@ -55,4 +56,9 @@ const (
 	DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY  = "false"
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
+)
+
+// Flags
+const (
+	LIMIT = "limit"
 )
