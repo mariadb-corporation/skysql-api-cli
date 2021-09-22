@@ -15,9 +15,9 @@ var (
 		Aliases: []string{PRODUCT},
 		Short:   fmt.Sprintf("Retrieve MariaDB SkySQL %s information", PRODUCT),
 		Long:    fmt.Sprintf("Queries information for %s offerings from MariaDB SkySQL", PRODUCT),
-		Args:    cobra.MaximumNArgs(1),
+		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
-			limit := viper.GetInt("limit")
+			limit := viper.GetInt(LIMIT)
 
 			var res *http.Response
 			var err error
