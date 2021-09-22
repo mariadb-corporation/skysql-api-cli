@@ -11,7 +11,7 @@ import (
 
 var (
 	getProductCmd = &cobra.Command{
-		Use:     PRODUCTS + " [PRODUCT]",
+		Use:     PRODUCTS,
 		Aliases: []string{PRODUCT},
 		Short:   fmt.Sprintf("Retrieve MariaDB SkySQL %s information", PRODUCT),
 		Long:    fmt.Sprintf("Queries information for %s offerings from MariaDB SkySQL", PRODUCT),
