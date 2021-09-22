@@ -28,6 +28,6 @@ var (
 func init() {
 	updateCmd.AddCommand(updateDatabaseCmd)
 
-	updateDatabaseCmd.Flags().StringP("name", "n", "", "Name used to identify the database")
+	updateDatabaseCmd.Flags().StringP("name", "n", DEFAULT_UPDATE_DATABASE_NAME, "Name used to identify the database")
 	viper.BindPFlag("name", updateDatabaseCmd.Flags().Lookup("name"))
 }

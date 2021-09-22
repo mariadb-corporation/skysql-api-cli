@@ -20,6 +20,6 @@ var (
 func init() {
 	rootCmd.AddCommand(getCmd)
 
-	getCmd.PersistentFlags().IntP("limit", "l", 10, "Number of records to return")
+	getCmd.PersistentFlags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Number of records to return")
 	viper.BindPFlag("limit", getCmd.PersistentFlags().Lookup("limit"))
 }
