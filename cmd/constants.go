@@ -22,19 +22,18 @@ const (
 
 // Entities
 const (
-	DATABASE  = "database"
-	DATABASES = "databases"
-)
-
-// Commands
-const (
-	QUOTA  = "quota"
-	QUOTAS = "quotas"
+	DATABASE   = "database"
+	DATABASES  = "databases"
+	QUOTA      = "quota"
+	QUOTAS     = "quotas"
+	TOPOLOGIES = "topologies"
+	TOPOLOGY   = "topology"
 )
 
 // hints
 const (
 	HINT_DB_ID = "Specify a database using the database id (e.g. db00000000)"
+	HINT_LIMIT = "Maximum number of results to retrieve"
 )
 
 // defaults
@@ -55,4 +54,10 @@ const (
 	DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY  = "false"
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
+)
+
+// Flags
+const (
+	LIMIT           = "limit"
+	LIMIT_SHORTHAND = "l"
 )
