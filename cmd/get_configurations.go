@@ -38,6 +38,6 @@ var (
 func init() {
 	getCmd.AddCommand(getConfigurationCmd)
 
-	getConfigurationCmd.Flags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Maximum number of configurations to retrieve")
-	viper.BindPFlag(LIMIT, createDatabaseCmd.Flags().Lookup(LIMIT))
+	getConfigurationCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
+	viper.BindPFlag(LIMIT, getConfigurationCmd.Flags().Lookup(LIMIT))
 }

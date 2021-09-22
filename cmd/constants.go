@@ -36,6 +36,7 @@ const ()
 // hints
 const (
 	HINT_DB_ID = "Specify a database using the database id (e.g. db00000000)"
+	HINT_LIMIT = "Maximum number of results to retrieve"
 )
 
 // defaults
@@ -60,5 +61,6 @@ const (
 
 // Flags
 const (
-	LIMIT = "limit"
+	LIMIT           = "limit"
+	LIMIT_SHORTHAND = "l"
 )
