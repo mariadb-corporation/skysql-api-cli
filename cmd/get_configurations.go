@@ -13,8 +13,8 @@ var (
 	getConfigurationCmd = &cobra.Command{
 		Use:     fmt.Sprintf("%s [CONFIGURATION NUMBER]", CONFIGURATIONS),
 		Aliases: []string{CONFIGURATION},
-		Short:   fmt.Sprintf("Retrieve stored %s configurations", DATABASE),
-		Long:    fmt.Sprintf("Retrieves one or more custom %s configurations owned by the user", DATABASE),
+		Short:   fmt.Sprintf("Retrieve stored %s %s", DATABASE, CONFIGURATIONS),
+		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", DATABASE, CONFIGURATIONS),
 		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
