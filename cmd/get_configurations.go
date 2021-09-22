@@ -17,14 +17,13 @@ var (
 		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", DATABASE, CONFIGURATIONS),
 		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
-			limit := viper.GetInt(LIMIT)
-
 			var res *http.Response
 			var err error
 			if len(args) == 1 {
 				configNumber := args[0]
 				res, err = client.ReadConfiguration(cmd.Context(), configNumber)
 			} else {
+				limit := viper.GetInt(LIMIT)
 				res, err = client.ListConfigurations(cmd.Context(), &skysql.ListConfigurationsParams{
 					Limit: &limit,
 				})
