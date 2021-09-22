@@ -49,9 +49,6 @@ func checkAndPrint(res *http.Response, err error, entityName string) {
 
 var (
 	cfgFile  string
-	apiKey   string
-	host     string
-	mdbid    string
 	client   *skysql.Client
 	skipAuth = map[string]bool{ // no need to do auth for subcommands like completion generation
 		"bash":       true,
@@ -76,7 +73,7 @@ var (
 				crash("required flag \"api-key\" not set " + cmd.Use)
 			}
 
-			mdbid = viper.GetString("mdbid")
+			mdbid := viper.GetString("mdbid")
 			url, err := url.Parse(mdbid)
 			checkErr(err, "unable to parse mdbid url")
 			if url.String() == "" {
@@ -111,7 +108,7 @@ var (
 			bearerTokenProvider, err := securityprovider.NewSecurityProviderBearerToken(slt)
 			checkErr(err, "unable to initialize bearer auth security provider")
 			client, err = skysql.NewClient(
-				host,
+				viper.GetString("host"),
 				skysql.WithRequestEditorFn(bearerTokenProvider.Intercept),
 			)
 			checkErr(err, "unable to initialize skysql client")
@@ -130,9 +127,9 @@ func init() {
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default $HOME/.skysqlcli.yaml)")
-	rootCmd.PersistentFlags().StringVar(&apiKey, "api-key", "", "Long-lived JWT issued from MariaDB ID")
-	rootCmd.PersistentFlags().StringVar(&host, "host", SKYSQL_API, "URL for the SkySQL API")
-	rootCmd.PersistentFlags().StringVar(&mdbid, "mdbid", MARIADB_ID, "URL for MariaDB ID")
+	rootCmd.PersistentFlags().String("api-key", "", "Long-lived JWT issued from MariaDB ID")
+	rootCmd.PersistentFlags().String("host", SKYSQL_API, "URL for the SkySQL API")
+	rootCmd.PersistentFlags().String("mdbid", MARIADB_ID, "URL for MariaDB ID")
 
 	viper.BindPFlag("api_key", rootCmd.PersistentFlags().Lookup("api-key"))
 	viper.BindPFlag("host", rootCmd.PersistentFlags().Lookup("host"))

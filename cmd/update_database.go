@@ -7,7 +7,6 @@ import (
 )
 
 var (
-	dbUpdateName      string
 	updateDatabaseCmd = &cobra.Command{
 		Use:   DATABASE + " [DATABASE]",
 		Short: "Update an existing database",
@@ -29,6 +28,6 @@ var (
 func init() {
 	updateCmd.AddCommand(updateDatabaseCmd)
 
-	updateDatabaseCmd.Flags().StringVarP(&dbUpdateName, "name", "n", "", "Name used to identify the database")
+	updateDatabaseCmd.Flags().StringP("name", "n", "", "Name used to identify the database")
 	viper.BindPFlag("name", updateDatabaseCmd.Flags().Lookup("name"))
 }

@@ -6,7 +6,6 @@ import (
 )
 
 var (
-	limit         int
 	getValidArgs  = []string{DATABASES, QUOTAS}
 	getArgAliases = []string{DATABASE, QUOTA}
 	getCmd        = &cobra.Command{
@@ -21,6 +20,6 @@ var (
 func init() {
 	rootCmd.AddCommand(getCmd)
 
-	getCmd.PersistentFlags().IntVarP(&limit, "limit", "l", 10, "Number of records to return")
+	getCmd.PersistentFlags().IntP("limit", "l", 10, "Number of records to return")
 	viper.BindPFlag("limit", getCmd.PersistentFlags().Lookup("limit"))
 }

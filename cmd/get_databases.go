@@ -5,6 +5,7 @@ import (
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var (
@@ -21,6 +22,7 @@ var (
 				dbid := args[0]
 				res, err = client.ReadDatabase(cmd.Context(), dbid)
 			} else {
+				limit := viper.GetInt("limit")
 				res, err = client.ListDatabases(cmd.Context(), &skysql.ListDatabasesParams{
 					Limit: &limit,
 				})
