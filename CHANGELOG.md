@@ -1,3 +1,15 @@
+# v0.0.3 (Wed Sep 22 2021)
+
+#### 🚀 Enhancement
+
+- DBAAS-6841: Add create/update/delete database commands [#7](https://github.com/mariadb-corporation/skysql-api-cli/pull/7) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.2 (Tue Sep 21 2021)
 
 #### 🚀 Enhancement
