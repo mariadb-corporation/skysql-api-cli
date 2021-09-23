@@ -1,3 +1,15 @@
+# v0.0.4 (Thu Sep 23 2021)
+
+#### 🚀 Enhancement
+
+- Update sdk to include `volume_iops` and `volume_type` for db [#17](https://github.com/mariadb-corporation/skysql-api-cli/pull/17) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.3 (Wed Sep 22 2021)
 
 #### 🚀 Enhancement
