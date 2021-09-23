@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	getTologoyCmd = &cobra.Command{
+	getTopologyCmd = &cobra.Command{
 		Use:     TOPOLOGIES,
 		Aliases: []string{TOPOLOGY},
 		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", DATABASE, TOPOLOGIES),
@@ -31,8 +31,5 @@ var (
 )
 
 func init() {
-	getCmd.AddCommand(getTologoyCmd)
-
-	getTologoyCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
-	viper.BindPFlag(LIMIT, getTologoyCmd.Flags().Lookup(LIMIT))
+	getCmd.AddCommand(getTopologyCmd)
 }
