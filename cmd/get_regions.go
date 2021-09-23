@@ -32,7 +32,4 @@ var (
 
 func init() {
 	getCmd.AddCommand(getRegionCmd)
-
-	getRegionCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
-	viper.BindPFlag(LIMIT, getRegionCmd.Flags().Lookup(LIMIT))
 }
