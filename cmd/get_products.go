@@ -32,7 +32,4 @@ var (
 
 func init() {
 	getCmd.AddCommand(getProductCmd)
-
-	getProductCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
-	viper.BindPFlag(LIMIT, getProductCmd.Flags().Lookup(LIMIT))
 }
