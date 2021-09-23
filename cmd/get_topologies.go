@@ -36,6 +36,5 @@ func init() {
 	getCmd.AddCommand(getTopologyCmd)
 
 	getTopologyCmd.PersistentFlags().StringP(PRODUCT, "p", "", fmt.Sprintf("MariaDB SkySQL %s used to filter list of %s", PRODUCT, TOPOLOGIES))
-	getTopologyCmd.MarkPersistentFlagRequired(PRODUCT)
 	viper.BindPFlag(PRODUCT, getTopologyCmd.PersistentFlags().Lookup(PRODUCT))
 }
