@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 
 	"github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
@@ -11,7 +12,7 @@ import (
 
 var (
 	getAllowlistCmd = &cobra.Command{
-		Use:   fmt.Sprintf("%s [%s id]", ALLOWLIST, DATABASE),
+		Use:   fmt.Sprintf("%s [%s]", ALLOWLIST, strings.ToUpper(DATABASE)),
 		Short: fmt.Sprintf("Retrieve list of allowed IPs for a %s", DATABASE),
 		Long:  fmt.Sprintf("Queries for list of allowed IP addresses for a specific %s", DATABASE),
 		Args:  cobra.MaximumNArgs(1),
