@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
@@ -11,7 +12,7 @@ import (
 
 var (
 	getConfigurationCmd = &cobra.Command{
-		Use:     fmt.Sprintf("%s [CONFIGURATION NUMBER]", CONFIGURATIONS),
+		Use:     fmt.Sprintf("%s [%s]", CONFIGURATIONS, strings.ToUpper(CONFIGURATION)),
 		Aliases: []string{CONFIGURATION},
 		Short:   fmt.Sprintf("Retrieve stored %s %s", DATABASE, CONFIGURATIONS),
 		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", DATABASE, CONFIGURATIONS),
@@ -36,7 +37,4 @@ var (
 
 func init() {
 	getCmd.AddCommand(getConfigurationCmd)
-
-	getConfigurationCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
-	viper.BindPFlag(LIMIT, getConfigurationCmd.Flags().Lookup(LIMIT))
 }
