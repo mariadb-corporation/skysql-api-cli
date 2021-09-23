@@ -13,7 +13,7 @@ var (
 	getTierCmd = &cobra.Command{
 		Use:     TIERS,
 		Aliases: []string{TIER},
-		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", ACCOUNT TIERS),
+		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", ACCOUNT, TIERS),
 		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", ACCOUNT, TIERS),
 		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
@@ -32,7 +32,4 @@ var (
 
 func init() {
 	getCmd.AddCommand(getTierCmd)
-
-	getTierCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
-	viper.BindPFlag(LIMIT, getTierCmd.Flags().Lookup(LIMIT))
 }
