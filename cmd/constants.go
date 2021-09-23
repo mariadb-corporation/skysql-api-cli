@@ -26,6 +26,7 @@ const (
 	DATABASES  = "databases"
 	QUOTA      = "quota"
 	QUOTAS     = "quotas"
+	PRODUCT    = "product"
 	TOPOLOGIES = "topologies"
 	TOPOLOGY   = "topology"
 )

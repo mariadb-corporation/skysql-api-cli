@@ -18,11 +18,13 @@ var (
 		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
+			product := viper.GetString(PRODUCT)
 
 			var res *http.Response
 			var err error
 			res, err = client.ReadTopologies(cmd.Context(), &skysql.ReadTopologiesParams{
-				Limit: &limit,
+				Limit:   &limit,
+				Product: &product,
 			})
 
 			checkAndPrint(res, err, TOPOLOGIES)
@@ -32,4 +34,8 @@ var (
 
 func init() {
 	getCmd.AddCommand(getTopologyCmd)
+
+	getTopologyCmd.PersistentFlags().StringP(PRODUCT, "p", "", fmt.Sprintf("MariaDB SkySQL %s used to filter list of %s", PRODUCT, TOPOLOGIES))
+	getTopologyCmd.MarkPersistentFlagRequired(PRODUCT)
+	viper.BindPFlag(PRODUCT, getTopologyCmd.PersistentFlags().Lookup(PRODUCT))
 }
