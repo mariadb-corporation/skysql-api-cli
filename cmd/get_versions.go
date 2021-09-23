@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	getTologoyCmd = &cobra.Command{
+	getVersionCmd = &cobra.Command{
 		Use:     VERSIONS,
 		Aliases: []string{VERSION},
 		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", DATABASE, VERSIONS),
@@ -31,8 +31,5 @@ var (
 )
 
 func init() {
-	getCmd.AddCommand(getTologoyCmd)
-
-	getTologoyCmd.Flags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, HINT_LIMIT)
-	viper.BindPFlag(LIMIT, getTologoyCmd.Flags().Lookup(LIMIT))
+	getCmd.AddCommand(getVersionCmd)
 }
