@@ -2,8 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"io/ioutil"
-	"net/http"
 	"strings"
 
 	"github.com/mariadb-corporation/skysql-api-go"
@@ -23,17 +21,7 @@ var (
 
 			dbid := args[0]
 			res, err := client.ListAllowedAddresses(cmd.Context(), dbid, &skysql.ListAllowedAddressesParams{})
-			checkErr(err, fmt.Sprintf("unable to retrieve %s from SkySQL", ALLOWLIST))
-			defer res.Body.Close()
-
-			body, err := ioutil.ReadAll(res.Body)
-			checkErr(err, "unable to read response from SkySQL")
-
-			if res.StatusCode != http.StatusOK {
-				crash(fmt.Sprintf("unable to retrieve %s from SkySQL: Status: %v, Body: %v", ALLOWLIST, res.StatusCode, string(body)))
-			}
-
-			fmt.Println(string(body))
+			checkAndPrint(res, err, ALLOWLIST)
 		},
 	}
 )
