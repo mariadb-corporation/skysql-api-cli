@@ -8,6 +8,7 @@ import (
 	"net/url"
 	"os"
 	"path"
+	"strings"
 
 	"github.com/deepmap/oapi-codegen/pkg/securityprovider"
 	skysql "github.com/mariadb-corporation/skysql-api-go"
@@ -153,6 +154,7 @@ func initConfig() {
 	}
 
 	viper.SetEnvPrefix(PROJECT_NAME)
+	viper.SetEnvKeyReplacer(strings.NewReplacer("-", "_"))
 	viper.AutomaticEnv() // read in environment variables that match
 
 	// If a config file is found, read it in.

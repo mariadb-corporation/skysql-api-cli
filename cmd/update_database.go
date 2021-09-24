@@ -12,10 +12,13 @@ var (
 		Short: "Update an existing database",
 		Long:  "Submits request to MariaDB SkySQL to update an existing database. " + HINT_DB_ID,
 		Args:  cobra.ExactArgs(1),
+		PreRun: func(cmd *cobra.Command, args []string) {
+			viper.BindPFlag(NAME, cmd.Flags().Lookup(NAME))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			dbid := args[0]
 			reqBody := skysql.UpdateDatabaseJSONRequestBody{
-				Name: viper.GetString("name"),
+				Name: viper.GetString(NAME),
 			}
 
 			res, err := client.UpdateDatabase(cmd.Context(), dbid, reqBody)
@@ -28,6 +31,5 @@ var (
 func init() {
 	updateCmd.AddCommand(updateDatabaseCmd)
 
-	updateDatabaseCmd.Flags().StringP("name", "n", DEFAULT_UPDATE_DATABASE_NAME, "Name used to identify the database")
-	viper.BindPFlag("name", updateDatabaseCmd.Flags().Lookup("name"))
+	updateDatabaseCmd.Flags().StringP(NAME, "n", DEFAULT_UPDATE_DATABASE_NAME, "Name used to identify the database")
 }
