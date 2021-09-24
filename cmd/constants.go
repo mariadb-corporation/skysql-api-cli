@@ -22,14 +22,11 @@ const (
 
 // Entities
 const (
+	ALLOWLIST = "allowlist"
 	DATABASE  = "database"
 	DATABASES = "databases"
-)
-
-// Commands
-const (
-	QUOTA  = "quota"
-	QUOTAS = "quotas"
+	QUOTA     = "quota"
+	QUOTAS    = "quotas"
 )
 
 // hints
