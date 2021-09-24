@@ -27,6 +27,8 @@ const (
   CONFIGURATIONS = "configurations"
 	DATABASE       = "database"
 	DATABASES      = "databases"
+	PRODUCT        = "product"
+	PRODUCTS       = "products"
 	QUOTA          = "quota"
 	QUOTAS         = "quotas"
 )
