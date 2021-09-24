@@ -35,6 +35,9 @@ const (
 	QUOTAS         = "quotas"
 	REGION         = "region"
 	REGIONS        = "regions"
+	SIZE           = "size"
+	SIZES          = "sizes"
+	STORAGE        = "storage"
 )
 
 // hints
