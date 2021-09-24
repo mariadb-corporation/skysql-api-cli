@@ -1,3 +1,16 @@
+# v0.0.8 (Fri Sep 24 2021)
+
+#### 🐛 Bug Fix
+
+- Use strings rather than pointers for newly required params [#19](https://github.com/mariadb-corporation/skysql-api-cli/pull/19) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+- Avoid viper bug regarding flag name collisions [#18](https://github.com/mariadb-corporation/skysql-api-cli/pull/18) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.7 (Fri Sep 24 2021)
 
 #### 🚀 Enhancement
