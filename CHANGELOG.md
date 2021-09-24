@@ -1,3 +1,15 @@
+# v0.0.5 (Fri Sep 24 2021)
+
+#### 🚀 Enhancement
+
+- Add get allowlist command [#8](https://github.com/mariadb-corporation/skysql-api-cli/pull/8) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.4 (Thu Sep 23 2021)
 
 #### 🚀 Enhancement
