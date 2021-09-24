@@ -42,8 +42,10 @@ const (
 	STORAGE        = "storage"
 	TIER           = "tier"
 	TIERS          = "tiers"
-  OPOLOGIES      = "topologies"
+  TOPOLOGIES     = "topologies"
 	TOPOLOGY       = "topology"
+	VERSION        = "version"
+	VERSIONS       = "versions"
 )
 
 // hints
