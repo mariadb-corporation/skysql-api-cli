@@ -22,12 +22,17 @@ const (
 
 // Entities
 const (
-	DATABASE  = "database"
-	DATABASES = "databases"
-	PROVIDER  = "provider"
-	PROVIDERS = "providers"
-	QUOTA     = "quota"
-	QUOTAS    = "quotas"
+	ALLOWLIST      = "allowlist"
+  CONFIGURATION  = "configuration"
+  CONFIGURATIONS = "configurations"
+	DATABASE       = "database"
+	DATABASES      = "databases"
+	PRODUCT        = "product"
+	PRODUCTS       = "products"
+	PROVIDER       = "provider"
+	PROVIDERS      = "providers"
+	QUOTA          = "quota"
+	QUOTAS         = "quotas"
 )
 
 // hints
@@ -52,6 +57,8 @@ const (
 	DEFAULT_CREATE_DATABASE_REPLICAS        = "0"
 	DEFAULT_CREATE_DATABASE_MONITOR         = "false"
 	DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY  = "false"
+	DEFAULT_CREATE_DATABASE_VOLUME_IOPS     = ""
+	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
 )
