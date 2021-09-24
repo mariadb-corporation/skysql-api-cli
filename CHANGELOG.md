@@ -1,3 +1,18 @@
+# v0.0.6 (Fri Sep 24 2021)
+
+#### 🚀 Enhancement
+
+- Add get regions command [#12](https://github.com/mariadb-corporation/skysql-api-cli/pull/12) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Add get providers command [#11](https://github.com/mariadb-corporation/skysql-api-cli/pull/11) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Add get products command [#10](https://github.com/mariadb-corporation/skysql-api-cli/pull/10) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Add get configurations command [#9](https://github.com/mariadb-corporation/skysql-api-cli/pull/9) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.5 (Fri Sep 24 2021)
 
 #### 🚀 Enhancement
