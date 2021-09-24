@@ -22,8 +22,9 @@ const (
 
 // Entities
 const (
-	CONFIGURATION  = "configuration"
-	CONFIGURATIONS = "configurations"
+	ALLOWLIST      = "allowlist"
+  CONFIGURATION  = "configuration"
+  CONFIGURATIONS = "configurations"
 	DATABASE       = "database"
 	DATABASES      = "databases"
 	QUOTA          = "quota"
@@ -52,6 +53,8 @@ const (
 	DEFAULT_CREATE_DATABASE_REPLICAS        = "0"
 	DEFAULT_CREATE_DATABASE_MONITOR         = "false"
 	DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY  = "false"
+	DEFAULT_CREATE_DATABASE_VOLUME_IOPS     = ""
+	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
 )

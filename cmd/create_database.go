@@ -26,6 +26,8 @@ var (
 				Replicas:       viper.GetString("replicas"),
 				Monitor:        viper.GetString("monitor"),
 				MaxscaleProxy:  viper.GetString("maxscale_proxy"),
+				VolumeIops:     viper.GetString("volume_iops"),
+				VolumeType:     viper.GetString("volume_type"),
 			}
 
 			res, err := client.CreateDatabase(cmd.Context(), reqBody)
@@ -73,4 +75,10 @@ func init() {
 
 	createDatabaseCmd.Flags().String("maxscale-proxy", DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY, "Whether to set up a proxy for maxscale")
 	viper.BindPFlag("maxscale_proxy", createDatabaseCmd.Flags().Lookup("maxscale-proxy"))
+
+	createDatabaseCmd.Flags().String("volume-iops", DEFAULT_CREATE_DATABASE_VOLUME_IOPS, "Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS")
+	viper.BindPFlag("volume_iops", createDatabaseCmd.Flags().Lookup("volume-iops"))
+
+	createDatabaseCmd.Flags().String("volume-type", DEFAULT_CREATE_DATABASE_VOLUME_TYPE, "Type of volume to use (e.g. io1, gp3). Required for Amazon AWS")
+	viper.BindPFlag("volume_type", createDatabaseCmd.Flags().Lookup("volume-type"))
 }

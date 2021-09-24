@@ -1,7 +1,9 @@
 package cmd
 
 import (
+	"fmt"
 	"net/http"
+	"strings"
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
@@ -10,7 +12,7 @@ import (
 
 var (
 	getDatabaseCmd = &cobra.Command{
-		Use:     DATABASES + " [DATABASE]",
+		Use:     fmt.Sprintf("%s [%s]", DATABASES, strings.ToUpper(DATABASE)),
 		Aliases: []string{DATABASE},
 		Short:   "Retrieve database information",
 		Long:    "Queries for information about deployed database resources in SkySQL. " + HINT_DB_ID,
