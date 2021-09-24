@@ -29,6 +29,8 @@ const (
 	DATABASES      = "databases"
 	PRODUCT        = "product"
 	PRODUCTS       = "products"
+	PROVIDER       = "provider"
+	PROVIDERS      = "providers"
 	QUOTA          = "quota"
 	QUOTAS         = "quotas"
 )
