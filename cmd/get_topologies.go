@@ -16,6 +16,9 @@ var (
 		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", DATABASE, TOPOLOGIES),
 		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", DATABASE, TOPOLOGIES),
 		Args:    cobra.NoArgs,
+		PreRun: func(cmd *cobra.Command, args []string) {
+			viper.BindPFlag(PRODUCT, cmd.PersistentFlags().Lookup(PRODUCT))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
 			product := viper.GetString(PRODUCT)
@@ -36,5 +39,4 @@ func init() {
 	getCmd.AddCommand(getTopologyCmd)
 
 	getTopologyCmd.PersistentFlags().StringP(PRODUCT, "p", "", fmt.Sprintf("MariaDB SkySQL %s used to filter list of %s", PRODUCT, TOPOLOGIES))
-	viper.BindPFlag(PRODUCT, getTopologyCmd.PersistentFlags().Lookup(PRODUCT))
 }
