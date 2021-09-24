@@ -22,18 +22,21 @@ const (
 
 // Entities
 const (
-	DATABASE  = "database"
-	DATABASES = "databases"
-	PRODUCT   = "product"
-	PRODUCTS  = "products"
-	QUOTA     = "quota"
-	QUOTAS    = "quotas"
+	ALLOWLIST      = "allowlist"
+  CONFIGURATION  = "configuration"
+  CONFIGURATIONS = "configurations"
+	DATABASE       = "database"
+	DATABASES      = "databases"
+	PRODUCT        = "product"
+	PRODUCTS       = "products"
+	QUOTA          = "quota"
+	QUOTAS         = "quotas"
 )
 
 // hints
 const (
 	HINT_DB_ID = "Specify a database using the database id (e.g. db00000000)"
-	HINT_LIMIT = "Maximum results to return"
+	HINT_LIMIT = "Maximum number of results to retrieve"
 )
 
 // defaults
@@ -52,6 +55,8 @@ const (
 	DEFAULT_CREATE_DATABASE_REPLICAS        = "0"
 	DEFAULT_CREATE_DATABASE_MONITOR         = "false"
 	DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY  = "false"
+	DEFAULT_CREATE_DATABASE_VOLUME_IOPS     = ""
+	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
 )
