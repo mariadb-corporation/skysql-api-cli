@@ -22,6 +22,8 @@ const (
 
 // Entities
 const (
+	ACCOUNT   = "account"
+	ACCOUNTS  = "accounts"
 	ALLOWLIST      = "allowlist"
   CONFIGURATION  = "configuration"
   CONFIGURATIONS = "configurations"
@@ -38,6 +40,8 @@ const (
 	SIZE           = "size"
 	SIZES          = "sizes"
 	STORAGE        = "storage"
+	TIER      = "tier"
+	TIERS     = "tiers"
 )
 
 // hints
