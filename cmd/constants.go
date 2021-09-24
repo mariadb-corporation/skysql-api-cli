@@ -33,6 +33,8 @@ const (
 	PROVIDERS      = "providers"
 	QUOTA          = "quota"
 	QUOTAS         = "quotas"
+	REGION         = "region"
+	REGIONS        = "regions"
 )
 
 // hints
