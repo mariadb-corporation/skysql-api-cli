@@ -29,8 +29,8 @@ var (
 			var err error
 			res, err = client.ReadSizes(cmd.Context(), &skysql.ReadSizesParams{
 				Limit:    &limit,
-				Product:  &product,
-				Provider: &provider,
+				Product:  product,
+				Provider: provider,
 			})
 
 			checkAndPrint(res, err, SIZES)

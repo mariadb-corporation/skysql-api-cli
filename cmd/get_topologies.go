@@ -27,7 +27,7 @@ var (
 			var err error
 			res, err = client.ReadTopologies(cmd.Context(), &skysql.ReadTopologiesParams{
 				Limit:   &limit,
-				Product: &product,
+				Product: product,
 			})
 
 			checkAndPrint(res, err, TOPOLOGIES)
