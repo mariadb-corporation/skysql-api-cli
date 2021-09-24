@@ -1,3 +1,18 @@
+# v0.0.7 (Fri Sep 24 2021)
+
+#### 🚀 Enhancement
+
+- Add get versions command [#16](https://github.com/mariadb-corporation/skysql-api-cli/pull/16) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Add get topologies command [#15](https://github.com/mariadb-corporation/skysql-api-cli/pull/15) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Add get tiers command [#14](https://github.com/mariadb-corporation/skysql-api-cli/pull/14) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Add get sizes command [#13](https://github.com/mariadb-corporation/skysql-api-cli/pull/13) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.6 (Fri Sep 24 2021)
 
 #### 🚀 Enhancement
