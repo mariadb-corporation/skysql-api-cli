@@ -22,16 +22,19 @@ const (
 
 // Entities
 const (
-	ALLOWLIST = "allowlist"
-	DATABASE  = "database"
-	DATABASES = "databases"
-	QUOTA     = "quota"
-	QUOTAS    = "quotas"
+	ALLOWLIST      = "allowlist"
+  CONFIGURATION  = "configuration"
+  CONFIGURATIONS = "configurations"
+	DATABASE       = "database"
+	DATABASES      = "databases"
+	QUOTA          = "quota"
+	QUOTAS         = "quotas"
 )
 
 // hints
 const (
 	HINT_DB_ID = "Specify a database using the database id (e.g. db00000000)"
+	HINT_LIMIT = "Maximum number of results to retrieve"
 )
 
 // defaults
@@ -54,4 +57,10 @@ const (
 	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
+)
+
+// Flags
+const (
+	LIMIT           = "limit"
+	LIMIT_SHORTHAND = "l"
 )
