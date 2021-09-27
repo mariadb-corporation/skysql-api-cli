@@ -18,11 +18,13 @@ var (
 		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
+			provider := viper.GetString(PROVIDER)
 
 			var res *http.Response
 			var err error
 			res, err = client.ReadRegions(cmd.Context(), &skysql.ReadRegionsParams{
-				Limit: &limit,
+				Limit:    &limit,
+				Provider: provider,
 			})
 
 			checkAndPrint(res, err, REGIONS)
@@ -32,4 +34,7 @@ var (
 
 func init() {
 	getCmd.AddCommand(getRegionCmd)
+
+	getSizeCmd.PersistentFlags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, STORAGE, SIZES))
+	viper.BindPFlag(PROVIDER, getSizeCmd.PersistentFlags().Lookup(PROVIDER))
 }
