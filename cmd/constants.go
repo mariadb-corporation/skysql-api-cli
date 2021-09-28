@@ -42,6 +42,7 @@ const (
 	REGIONS         = "regions"
 	SIZE            = "size"
 	SIZES           = "sizes"
+	STATUS          = "status"
 	STORAGE         = "storage"
 	TIER            = "tier"
 	TIERS           = "tiers"
