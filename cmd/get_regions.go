@@ -35,6 +35,6 @@ var (
 func init() {
 	getCmd.AddCommand(getRegionCmd)
 
-	getSizeCmd.PersistentFlags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, STORAGE, SIZES))
-	viper.BindPFlag(PROVIDER, getSizeCmd.PersistentFlags().Lookup(PROVIDER))
+	getRegionCmd.PersistentFlags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, STORAGE, SIZES))
+	viper.BindPFlag(PROVIDER, getRegionCmd.PersistentFlags().Lookup(PROVIDER))
 }
