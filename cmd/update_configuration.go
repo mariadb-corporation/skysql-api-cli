@@ -15,7 +15,11 @@ var (
 		Use:   fmt.Sprintf("%s [%s]", CONFIGURATION, strings.ToUpper(CONFIGURATION)),
 		Short: fmt.Sprintf("Update a %s", CONFIGURATION),
 		Long:  fmt.Sprintf("Updates a %s for user in MariaDB SkySQL.", CONFIGURATION),
-		Args:  cobra.MinimumNArgs(1),
+		Args:  cobra.ExactArgs(1),
+		PreRun: func(cmd *cobra.Command, args []string) {
+			viper.BindPFlag(NAME, cmd.Flags().Lookup(NAME))
+			viper.BindPFlag(CONFIG_JSON, cmd.Flags().Lookup(CONFIG_JSON))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			configNumber := string(args[0])
 			configJson := map[string]interface{}{}
@@ -42,7 +46,4 @@ func init() {
 
 	updateConfigurationCmd.Flags().StringP(NAME, "n", "", fmt.Sprintf("Name used to identify the %s", CONFIGURATION))
 	updateConfigurationCmd.Flags().StringP(CONFIG_JSON, "j", "", fmt.Sprintf("JSON object containing %s", CONFIGURATION))
-
-	viper.BindPFlag(NAME, updateConfigurationCmd.Flags().Lookup(NAME))
-	viper.BindPFlag(CONFIG_JSON, updateConfigurationCmd.Flags().Lookup(CONFIG_JSON))
 }

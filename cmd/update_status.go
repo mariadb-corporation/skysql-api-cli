@@ -11,10 +11,14 @@ import (
 
 var (
 	updateStatusCmd = &cobra.Command{
-		Use:   fmt.Sprintf("%s [%s] [%s]", STATUS, strings.ToUpper(DATABASE), strings.ToUpper(STATUS)),
+		Use:   fmt.Sprintf("%s [%s] [Start|Stop]", STATUS, strings.ToUpper(DATABASE)),
 		Short: fmt.Sprintf("Update %s for %s", STATUS, DATABASE),
 		Long:  fmt.Sprintf("Updates %s for %s belonging user in MariaDB SkySQL.", STATUS, DATABASE),
-		Args:  cobra.MinimumNArgs(2),
+		Args:  cobra.ExactArgs(2),
+		PreRun: func(cmd *cobra.Command, args []string) {
+			viper.BindPFlag(NAME, cmd.Flags().Lookup(NAME))
+			viper.BindPFlag(CONFIG_JSON, cmd.Flags().Lookup(CONFIG_JSON))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			databaseId := args[0]
 			status := args[1]
@@ -32,10 +36,4 @@ var (
 
 func init() {
 	updateCmd.AddCommand(updateStatusCmd)
-
-	updateStatusCmd.Flags().StringP(NAME, "n", "", fmt.Sprintf("Name used to identify the %s", STATUS))
-	updateStatusCmd.Flags().StringP(CONFIG_JSON, "j", "", fmt.Sprintf("JSON object containing %s", STATUS))
-
-	viper.BindPFlag(NAME, updateStatusCmd.Flags().Lookup(NAME))
-	viper.BindPFlag(CONFIG_JSON, updateStatusCmd.Flags().Lookup(CONFIG_JSON))
 }

@@ -78,6 +78,10 @@ const (
 	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
+
+	DEFAULT_CREATE_CONFIGURATION_TOPOLOGY    = "Primary/Replica"
+	DEFAULT_CREATE_CONFIGURATION_NAME        = "HA"
+	DEFAULT_CREATE_CONFIGURATION_CONFIG_JSON = `{"log_warnings":11,"slave_compressed_protocol":true,"default_password_lifetime":90}`
 )
 
 // Flags

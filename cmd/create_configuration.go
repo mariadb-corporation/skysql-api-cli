@@ -15,6 +15,11 @@ var (
 		Short: fmt.Sprintf("Create a new %s", CONFIGURATION),
 		Long:  fmt.Sprintf("Creates a new %s for user in MariaDB SkySQL.", CONFIGURATION),
 		Args:  cobra.NoArgs,
+		PreRun: func(cmd *cobra.Command, args []string) {
+			viper.BindPFlag(TOPOLOGY, cmd.Flags().Lookup(TOPOLOGY))
+			viper.BindPFlag(NAME, cmd.Flags().Lookup(NAME))
+			viper.BindPFlag(CONFIG_JSON, cmd.Flags().Lookup(CONFIG_JSON))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			configJson := map[string]interface{}{}
 			configJsonString := viper.GetString(CONFIG_JSON)
@@ -38,11 +43,7 @@ var (
 func init() {
 	createCmd.AddCommand(createConfigurationCmd)
 
-	createConfigurationCmd.Flags().StringP(TOPOLOGY, "t", "", "Configuration topology to select")
-	createConfigurationCmd.Flags().StringP(NAME, "n", "", fmt.Sprintf("Name used to identify the %s", CONFIGURATION))
-	createConfigurationCmd.Flags().StringP(CONFIG_JSON, "j", "", fmt.Sprintf("JSON object containing %s", CONFIGURATION))
-
-	viper.BindPFlag(TOPOLOGY, createConfigurationCmd.Flags().Lookup(TOPOLOGY))
-	viper.BindPFlag(NAME, createConfigurationCmd.Flags().Lookup(NAME))
-	viper.BindPFlag(CONFIG_JSON, createConfigurationCmd.Flags().Lookup(CONFIG_JSON))
+	createConfigurationCmd.Flags().StringP(TOPOLOGY, "t", DEFAULT_CREATE_CONFIGURATION_TOPOLOGY, "Configuration topology to select")
+	createConfigurationCmd.Flags().StringP(NAME, "n", DEFAULT_CREATE_CONFIGURATION_NAME, fmt.Sprintf("Name used to identify the %s", CONFIGURATION))
+	createConfigurationCmd.Flags().StringP(CONFIG_JSON, "j", DEFAULT_CREATE_CONFIGURATION_CONFIG_JSON, fmt.Sprintf("JSON object containing %s", CONFIGURATION))
 }

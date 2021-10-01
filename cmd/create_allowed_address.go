@@ -14,7 +14,10 @@ var (
 		Use:   fmt.Sprintf("%s [%s] [%s]", ALLOWED_ADDRESS, strings.ToUpper(DATABASE), strings.ToUpper(IP_ADDRESS)),
 		Short: fmt.Sprintf("Add a new %s to a %s", strings.Replace(ALLOWED_ADDRESS, "-", " ", -1), DATABASE),
 		Long:  fmt.Sprintf("Adds a new %s for %s in MariaDB SkySQL.", strings.Replace(ALLOWED_ADDRESS, "-", " ", -1), DATABASE),
-		Args:  cobra.MinimumNArgs(2),
+		Args:  cobra.ExactArgs(2),
+		PreRun: func(cmd *cobra.Command, args []string) {
+			viper.BindPFlag(COMMENT, cmd.Flags().Lookup(COMMENT))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			databaseId := string(args[0])
 			ip_address := string(args[1])
@@ -33,6 +36,5 @@ var (
 func init() {
 	createCmd.AddCommand(createAllowedAddressCmd)
 
-	createAllowedAddressCmd.Flags().StringP(COMMENT, "c", "", fmt.Sprintf("Additional %s to help identify address", COMMENT))
-	viper.BindPFlag(COMMENT, createAllowedAddressCmd.Flags().Lookup(COMMENT))
+	createAllowedAddressCmd.Flags().StringP(COMMENT, "", "", fmt.Sprintf("Additional %s to help identify address", COMMENT))
 }

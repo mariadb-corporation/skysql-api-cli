@@ -10,7 +10,7 @@ var (
 		Aliases: []string{QUOTA},
 		Short:   "Retrieve quota information",
 		Long:    `Queries for quota limits, and progress towards those quotas.`,
-		Args:    cobra.MaximumNArgs(0),
+		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			res, err := client.ReadQuotas(cmd.Context())
 			checkAndPrint(res, err, QUOTAS)
