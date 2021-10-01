@@ -16,7 +16,7 @@ var (
 		Aliases: []string{CONFIGURATION},
 		Short:   fmt.Sprintf("Retrieve stored %s %s", DATABASE, CONFIGURATIONS),
 		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", DATABASE, CONFIGURATIONS),
-		Args:    cobra.ExactArgs(1),
+		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			var res *http.Response
 			var err error

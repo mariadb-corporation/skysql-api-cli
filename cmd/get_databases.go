@@ -16,7 +16,7 @@ var (
 		Aliases: []string{DATABASE},
 		Short:   "Retrieve database information",
 		Long:    "Queries for information about deployed database resources in SkySQL. " + HINT_DB_ID,
-		Args:    cobra.ExactArgs(1),
+		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			var res *http.Response
 			var err error
