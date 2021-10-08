@@ -22,30 +22,34 @@ const (
 
 // Entities
 const (
-	ACCOUNT        = "account"
-	ACCOUNTS       = "accounts"
-	ALLOWLIST      = "allowlist"
-	CONFIGURATION  = "configuration"
-	CONFIGURATIONS = "configurations"
-	DATABASE       = "database"
-	DATABASES      = "databases"
-	PRODUCT        = "product"
-	PRODUCTS       = "products"
-	PROVIDER       = "provider"
-	PROVIDERS      = "providers"
-	QUOTA          = "quota"
-	QUOTAS         = "quotas"
-	REGION         = "region"
-	REGIONS        = "regions"
-	SIZE           = "size"
-	SIZES          = "sizes"
-	STORAGE        = "storage"
-	TIER           = "tier"
-	TIERS          = "tiers"
-	TOPOLOGIES     = "topologies"
-	TOPOLOGY       = "topology"
-	VERSION        = "version"
-	VERSIONS       = "versions"
+	ACCOUNT         = "account"
+	ACCOUNTS        = "accounts"
+	ALLOWLIST       = "allowlist"
+	ALLOWED_ADDRESS = "allowed-address"
+	COMMENT         = "comment"
+	CONFIGURATION   = "configuration"
+	CONFIGURATIONS  = "configurations"
+	DATABASE        = "database"
+	DATABASES       = "databases"
+	IP_ADDRESS      = "ip-address"
+	PRODUCT         = "product"
+	PRODUCTS        = "products"
+	PROVIDER        = "provider"
+	PROVIDERS       = "providers"
+	QUOTA           = "quota"
+	QUOTAS          = "quotas"
+	REGION          = "region"
+	REGIONS         = "regions"
+	SIZE            = "size"
+	SIZES           = "sizes"
+	STATUS          = "status"
+	STORAGE         = "storage"
+	TIER            = "tier"
+	TIERS           = "tiers"
+	TOPOLOGIES      = "topologies"
+	TOPOLOGY        = "topology"
+	VERSION         = "version"
+	VERSIONS        = "versions"
 )
 
 // hints
@@ -74,19 +78,35 @@ const (
 	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
 
 	DEFAULT_UPDATE_DATABASE_NAME = ""
+
+	DEFAULT_CREATE_CONFIGURATION_TOPOLOGY    = "Primary/Replica"
+	DEFAULT_CREATE_CONFIGURATION_NAME        = "HA"
+	DEFAULT_CREATE_CONFIGURATION_CONFIG_JSON = `
+		{
+			"variables": {
+				"interactive_timeout": {
+					"type": "number",
+					"value": "300",
+					"requires_restart": true,
+					"regex": ""
+				}
+			}
+		}
+	`
 )
 
 // Flags
 const (
+	CONFIG_JSON     = "config-json"
 	LIMIT           = "limit"
 	LIMIT_SHORTHAND = "l"
-	RELEASE_VERSION = "release-version"
 	MAXSCALE_CONFIG = "maxscale-config"
-	NAME            = "name"
-	REPL_REGION     = "repl-region"
-	REPLICAS        = "replicas"
-	MONITOR         = "monitor"
 	MAXSCALE_PROXY  = "maxscale-proxy"
+	MONITOR         = "monitor"
+	NAME            = "name"
+	RELEASE_VERSION = "release-version"
+	REPLICAS        = "replicas"
+	REPL_REGION     = "repl-region"
 	VOLUME_IOPS     = "volume-iops"
 	VOLUME_TYPE     = "volume-type"
 )
