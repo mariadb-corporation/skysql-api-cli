@@ -1,3 +1,15 @@
+# v0.0.9 (Fri Oct 08 2021)
+
+#### 🚀 Enhancement
+
+- Add get status, create configuration, create allowed-address, update configuration, update status, delete configuration and delete allowed-address commands [#20](https://github.com/mariadb-corporation/skysql-api-cli/pull/20) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.8 (Fri Sep 24 2021)
 
 #### 🐛 Bug Fix
