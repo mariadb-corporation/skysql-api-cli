@@ -36,5 +36,5 @@ var (
 func init() {
 	createCmd.AddCommand(createAllowedAddressCmd)
 
-	createAllowedAddressCmd.Flags().StringP(COMMENT, "", "", fmt.Sprintf("Additional %s to help identify address", COMMENT))
+	createAllowedAddressCmd.Flags().String(COMMENT, "", fmt.Sprintf("Additional %s to help identify address", COMMENT))
 }

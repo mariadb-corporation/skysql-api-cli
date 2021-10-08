@@ -81,7 +81,18 @@ const (
 
 	DEFAULT_CREATE_CONFIGURATION_TOPOLOGY    = "Primary/Replica"
 	DEFAULT_CREATE_CONFIGURATION_NAME        = "HA"
-	DEFAULT_CREATE_CONFIGURATION_CONFIG_JSON = `{"log_warnings":11,"slave_compressed_protocol":true,"default_password_lifetime":90}`
+	DEFAULT_CREATE_CONFIGURATION_CONFIG_JSON = `
+		{
+			"variables": {
+				"interactive_timeout": {
+					"type": "number",
+					"value": "300",
+					"requires_restart": true,
+					"regex": ""
+				}
+			}
+		}
+	`
 )
 
 // Flags
