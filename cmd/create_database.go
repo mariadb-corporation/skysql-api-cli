@@ -1,6 +1,9 @@
 package cmd
 
 import (
+	"fmt"
+	"strings"
+
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -27,6 +30,7 @@ var (
 			viper.BindPFlag(MAXSCALE_PROXY, cmd.Flags().Lookup(MAXSCALE_PROXY))
 			viper.BindPFlag(VOLUME_IOPS, cmd.Flags().Lookup(VOLUME_IOPS))
 			viper.BindPFlag(VOLUME_TYPE, cmd.Flags().Lookup(VOLUME_TYPE))
+			viper.BindPFlag(TIER, cmd.Flags().Lookup(TIER))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			reqBody := skysql.CreateDatabaseJSONRequestBody{
@@ -44,6 +48,7 @@ var (
 				MaxscaleProxy:  viper.GetString(MAXSCALE_PROXY),
 				VolumeIops:     viper.GetString(VOLUME_IOPS),
 				VolumeType:     viper.GetString(VOLUME_TYPE),
+				Tier:           viper.GetString(TIER),
 			}
 
 			res, err := client.CreateDatabase(cmd.Context(), reqBody)
@@ -70,4 +75,5 @@ func init() {
 	createDatabaseCmd.Flags().String(MAXSCALE_PROXY, DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY, "Whether to set up a proxy for maxscale")
 	createDatabaseCmd.Flags().String(VOLUME_IOPS, DEFAULT_CREATE_DATABASE_VOLUME_IOPS, "Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS")
 	createDatabaseCmd.Flags().String(VOLUME_TYPE, DEFAULT_CREATE_DATABASE_VOLUME_TYPE, "Type of volume to use (e.g. io1, gp3). Required for Amazon AWS")
+	createDatabaseCmd.Flags().String(TIER, DEFAULT_CREATE_DATABASE_VOLUME_TYPE, fmt.Sprintf("%s in which to provision %s", strings.ToTitle(TIER), DATABASE))
 }

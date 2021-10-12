@@ -13,17 +13,19 @@ var (
 	getSizeCmd = &cobra.Command{
 		Use:     SIZES,
 		Aliases: []string{SIZE},
-		Short:   fmt.Sprintf("Retrieve list of %s %s", STORAGE, SIZES),
-		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", STORAGE, SIZES),
+		Short:   fmt.Sprintf("Retrieve list of %s %s", MACHINE, SIZES),
+		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", MACHINE, SIZES),
 		Args:    cobra.NoArgs,
 		PreRun: func(cmd *cobra.Command, args []string) {
 			viper.BindPFlag(PRODUCT, cmd.PersistentFlags().Lookup(PRODUCT))
 			viper.BindPFlag(PROVIDER, cmd.PersistentFlags().Lookup(PROVIDER))
+			viper.BindPFlag(TIER, cmd.PersistentFlags().Lookup(TIER))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
 			product := viper.GetString(PRODUCT)
 			provider := viper.GetString(PROVIDER)
+			tier := viper.GetString(TIER)
 
 			var res *http.Response
 			var err error
@@ -31,6 +33,7 @@ var (
 				Limit:    &limit,
 				Product:  product,
 				Provider: provider,
+				Tier: 	  tier,
 			})
 
 			checkAndPrint(res, err, SIZES)
@@ -41,6 +44,7 @@ var (
 func init() {
 	getCmd.AddCommand(getSizeCmd)
 
-	getSizeCmd.PersistentFlags().String(PRODUCT, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PRODUCT, STORAGE, SIZES))
-	getSizeCmd.PersistentFlags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, STORAGE, SIZES))
+	getSizeCmd.PersistentFlags().String(PRODUCT, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PRODUCT, MACHINE, SIZES))
+	getSizeCmd.PersistentFlags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, MACHINE, SIZES))
+	getSizeCmd.PersistentFlags().String(TIER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", TIER, MACHINE, SIZES))
 }

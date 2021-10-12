@@ -32,6 +32,7 @@ const (
 	DATABASE        = "database"
 	DATABASES       = "databases"
 	IP_ADDRESS      = "ip-address"
+	MACHINE         = "machine"
 	PRODUCT         = "product"
 	PRODUCTS        = "products"
 	PROVIDER        = "provider"
