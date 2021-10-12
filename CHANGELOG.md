@@ -1,3 +1,15 @@
+# v0.0.10 (Tue Oct 12 2021)
+
+#### 🚀 Enhancement
+
+- Add tier flag to create database and get sizes commands [#21](https://github.com/mariadb-corporation/skysql-api-cli/pull/21) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.9 (Fri Oct 08 2021)
 
 #### 🚀 Enhancement
