@@ -1,3 +1,15 @@
+# v0.0.11 (Wed Oct 20 2021)
+
+#### 📝 Documentation
+
+- Add section to readme about install of the cli [#22](https://github.com/mariadb-corporation/skysql-api-cli/pull/22) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.10 (Tue Oct 12 2021)
 
 #### 🚀 Enhancement
