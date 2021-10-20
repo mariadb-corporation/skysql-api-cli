@@ -2,6 +2,14 @@
 
 This project contains a command line client for the SkySQL API.
 
+## Install
+
+Download the latest release of the cli for your OS from the Releases page on github:
+
+https://github.com/mariadb-corporation/skysql-api-cli/releases/latest
+
+We recommend renaming the file to `skysqlcli` and placing it into your `$PATH` for convenience.
+
 ## Usage
 
 The `skysqlcli` may be configured via command line flags, environment variables, or config file (in that order of precedence).
