@@ -1,3 +1,15 @@
+# v0.0.12 (Mon Oct 25 2021)
+
+#### 🚀 Enhancement
+
+- Rename "database" to "service" for all resources [#23](https://github.com/mariadb-corporation/skysql-api-cli/pull/23) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.11 (Wed Oct 20 2021)
 
 #### 📝 Documentation
