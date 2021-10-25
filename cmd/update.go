@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	updateValidArgs = []string{DATABASE}
+	updateValidArgs = []string{SERVICE}
 	updateCmd       = &cobra.Command{
 		Use:       UPDATE,
 		Short:     "Update a resource in MariaDB SkySQL",

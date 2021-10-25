@@ -7,29 +7,29 @@ import (
 )
 
 var (
-	updateDatabaseCmd = &cobra.Command{
-		Use:   DATABASE + " [DATABASE]",
-		Short: "Update an existing database",
-		Long:  "Submits request to MariaDB SkySQL to update an existing database. " + HINT_DB_ID,
+	updateServiceCmd = &cobra.Command{
+		Use:   SERVICE + " [SERVICE]",
+		Short: "Update an existing service",
+		Long:  "Submits request to MariaDB SkySQL to update an existing service. " + HINT_SVC_ID,
 		Args:  cobra.ExactArgs(1),
 		PreRun: func(cmd *cobra.Command, args []string) {
 			viper.BindPFlag(NAME, cmd.Flags().Lookup(NAME))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
-			dbid := args[0]
-			reqBody := skysql.UpdateDatabaseJSONRequestBody{
+			svcid := args[0]
+			reqBody := skysql.UpdateServiceJSONRequestBody{
 				Name: viper.GetString(NAME),
 			}
 
-			res, err := client.UpdateDatabase(cmd.Context(), dbid, reqBody)
+			res, err := client.UpdateService(cmd.Context(), svcid, reqBody)
 
-			checkAndPrint(res, err, DATABASES)
+			checkAndPrint(res, err, SERVICES)
 		},
 	}
 )
 
 func init() {
-	updateCmd.AddCommand(updateDatabaseCmd)
+	updateCmd.AddCommand(updateServiceCmd)
 
-	updateDatabaseCmd.Flags().StringP(NAME, "n", DEFAULT_UPDATE_DATABASE_NAME, "Name used to identify the database")
+	updateServiceCmd.Flags().StringP(NAME, "n", DEFAULT_UPDATE_SERVICE_NAME, "Name used to identify the service")
 }

@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	createValidArgs = []string{DATABASE}
+	createValidArgs = []string{SERVICE}
 	createCmd       = &cobra.Command{
 		Use:       CREATE,
 		Short:     "Create a resource in MariaDB SkySQL",

@@ -6,8 +6,8 @@ import (
 )
 
 var (
-	getValidArgs  = []string{DATABASES, QUOTAS}
-	getArgAliases = []string{DATABASE, QUOTA}
+	getValidArgs  = []string{SERVICES, QUOTAS}
+	getArgAliases = []string{SERVICE, QUOTA}
 	getCmd        = &cobra.Command{
 		Use:        GET,
 		Short:      "Query MariaDB SkySQL for resource information",
