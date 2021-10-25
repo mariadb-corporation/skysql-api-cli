@@ -5,21 +5,21 @@ import (
 )
 
 var (
-	deleteDatabaseCmd = &cobra.Command{
-		Use:   DATABASE + " [DATABASE]",
-		Short: "Delete an existing database",
-		Long:  "Submits request to MariaDB SkySQL to delete an existing database. " + HINT_DB_ID,
+	deleteServiceCmd = &cobra.Command{
+		Use:   SERVICE + " [SERVICE]",
+		Short: "Delete an existing service",
+		Long:  "Submits request to MariaDB SkySQL to delete an existing service. " + HINT_SVC_ID,
 		Args:  cobra.ExactArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
-			dbid := args[0]
+			svcid := args[0]
 
-			res, err := client.DeleteDatabase(cmd.Context(), dbid)
+			res, err := client.DeleteService(cmd.Context(), svcid)
 
-			checkAndPrint(res, err, DATABASES)
+			checkAndPrint(res, err, SERVICES)
 		},
 	}
 )
 
 func init() {
-	deleteCmd.AddCommand(deleteDatabaseCmd)
+	deleteCmd.AddCommand(deleteServiceCmd)
 }

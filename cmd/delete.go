@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	deleteValidArgs = []string{DATABASE}
+	deleteValidArgs = []string{SERVICE}
 	deleteCmd       = &cobra.Command{
 		Use:       DELETE,
 		Short:     "Delete a resource in MariaDB SkySQL",

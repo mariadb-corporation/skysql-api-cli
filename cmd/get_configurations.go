@@ -14,8 +14,8 @@ var (
 	getConfigurationCmd = &cobra.Command{
 		Use:     fmt.Sprintf("%s [%s]", CONFIGURATIONS, strings.ToUpper(CONFIGURATION)),
 		Aliases: []string{CONFIGURATION},
-		Short:   fmt.Sprintf("Retrieve stored %s %s", DATABASE, CONFIGURATIONS),
-		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", DATABASE, CONFIGURATIONS),
+		Short:   fmt.Sprintf("Retrieve stored %s %s", SERVICE, CONFIGURATIONS),
+		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", SERVICE, CONFIGURATIONS),
 		Args:    cobra.MaximumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			var res *http.Response

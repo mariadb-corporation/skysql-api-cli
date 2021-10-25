@@ -13,8 +13,8 @@ var (
 	getTopologyCmd = &cobra.Command{
 		Use:     TOPOLOGIES,
 		Aliases: []string{TOPOLOGY},
-		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", DATABASE, TOPOLOGIES),
-		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", DATABASE, TOPOLOGIES),
+		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", SERVICE, TOPOLOGIES),
+		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", SERVICE, TOPOLOGIES),
 		Args:    cobra.NoArgs,
 		PreRun: func(cmd *cobra.Command, args []string) {
 			viper.BindPFlag(PRODUCT, cmd.PersistentFlags().Lookup(PRODUCT))

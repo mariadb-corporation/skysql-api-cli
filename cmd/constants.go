@@ -29,8 +29,8 @@ const (
 	COMMENT         = "comment"
 	CONFIGURATION   = "configuration"
 	CONFIGURATIONS  = "configurations"
-	DATABASE        = "database"
-	DATABASES       = "databases"
+	SERVICE         = "service"
+	SERVICES        = "services"
 	IP_ADDRESS      = "ip-address"
 	MACHINE         = "machine"
 	PRODUCT         = "product"
@@ -55,30 +55,30 @@ const (
 
 // hints
 const (
-	HINT_DB_ID = "Specify a database using the database id (e.g. db00000000)"
-	HINT_LIMIT = "Maximum number of results to retrieve"
+	HINT_SVC_ID = "Specify a service using the service id (e.g. db00000000)"
+	HINT_LIMIT  = "Maximum number of results to retrieve"
 )
 
 // defaults
 const (
 	DEFAULT_GET_LIMIT = 10
 
-	DEFAULT_CREATE_DATABASE_RELEASE_VERSION = "MariaDB Enterprise Server 10.5.9-6"
-	DEFAULT_CREATE_DATABASE_TOPOLOGY        = "Standalone"
-	DEFAULT_CREATE_DATABASE_SIZE            = "Sky-2x4"
-	DEFAULT_CREATE_DATABASE_TXSTORAGE       = "100"
-	DEFAULT_CREATE_DATABASE_MAXSCALE_CONFIG = ""
-	DEFAULT_CREATE_DATABASE_NAME            = ""
-	DEFAULT_CREATE_DATABASE_REGION          = ""
-	DEFAULT_CREATE_DATABASE_REPL_REGION     = ""
-	DEFAULT_CREATE_DATABASE_PROVIDER        = ""
-	DEFAULT_CREATE_DATABASE_REPLICAS        = "0"
-	DEFAULT_CREATE_DATABASE_MONITOR         = "false"
-	DEFAULT_CREATE_DATABASE_MAXSCALE_PROXY  = "false"
-	DEFAULT_CREATE_DATABASE_VOLUME_IOPS     = ""
-	DEFAULT_CREATE_DATABASE_VOLUME_TYPE     = ""
+	DEFAULT_CREATE_SERVICE_RELEASE_VERSION = ""
+	DEFAULT_CREATE_SERVICE_TOPOLOGY        = "Standalone"
+	DEFAULT_CREATE_SERVICE_SIZE            = "Sky-2x4"
+	DEFAULT_CREATE_SERVICE_TXSTORAGE       = "100"
+	DEFAULT_CREATE_SERVICE_MAXSCALE_CONFIG = ""
+	DEFAULT_CREATE_SERVICE_NAME            = ""
+	DEFAULT_CREATE_SERVICE_REGION          = ""
+	DEFAULT_CREATE_SERVICE_REPL_REGION     = ""
+	DEFAULT_CREATE_SERVICE_PROVIDER        = ""
+	DEFAULT_CREATE_SERVICE_REPLICAS        = "0"
+	DEFAULT_CREATE_SERVICE_MONITOR         = "false"
+	DEFAULT_CREATE_SERVICE_MAXSCALE_PROXY  = "false"
+	DEFAULT_CREATE_SERVICE_VOLUME_IOPS     = ""
+	DEFAULT_CREATE_SERVICE_VOLUME_TYPE     = ""
 
-	DEFAULT_UPDATE_DATABASE_NAME = ""
+	DEFAULT_UPDATE_SERVICE_NAME = ""
 
 	DEFAULT_CREATE_CONFIGURATION_TOPOLOGY    = "Primary/Replica"
 	DEFAULT_CREATE_CONFIGURATION_NAME        = "HA"

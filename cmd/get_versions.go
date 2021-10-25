@@ -13,8 +13,8 @@ var (
 	getVersionCmd = &cobra.Command{
 		Use:     VERSIONS,
 		Aliases: []string{VERSION},
-		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", DATABASE, VERSIONS),
-		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", DATABASE, VERSIONS),
+		Short:   fmt.Sprintf("Retrieve list of MariaDB SkySQL %s %s", SERVICE, VERSIONS),
+		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", SERVICE, VERSIONS),
 		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)

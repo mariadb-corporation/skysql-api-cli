@@ -10,8 +10,8 @@ import (
 var (
 	deleteConfigurationCmd = &cobra.Command{
 		Use:   fmt.Sprintf("%s [%s]", CONFIGURATION, strings.ToUpper(CONFIGURATION)),
-		Short: fmt.Sprintf("Delete a %s %s", DATABASE, CONFIGURATION),
-		Long:  fmt.Sprintf("Deletes a %s %s for user in MariaDB SkySQL.", DATABASE, CONFIGURATION),
+		Short: fmt.Sprintf("Delete a %s %s", SERVICE, CONFIGURATION),
+		Long:  fmt.Sprintf("Deletes a %s %s for user in MariaDB SkySQL.", SERVICE, CONFIGURATION),
 		Args:  cobra.ExactArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			configNumber := string(args[0])
