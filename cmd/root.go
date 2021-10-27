@@ -74,11 +74,11 @@ var (
 				crash("required flag \"api-key\" not set " + cmd.Use)
 			}
 
-			msvcid := viper.GetString("msvcid")
-			url, err := url.Parse(msvcid)
-			checkErr(err, "unable to parse msvcid url")
+			mdbid := viper.GetString("mdbid")
+			url, err := url.Parse(mdbid)
+			checkErr(err, "unable to parse mdbid url")
 			if url.String() == "" {
-				checkErr(url, "unable to parse msvcid url")
+				checkErr(url, "unable to parse mdbid url")
 			}
 			url.Path = path.Join(url.Path, "/api/v1/token")
 
@@ -130,11 +130,11 @@ func init() {
 	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default $HOME/.skysqlcli.yaml)")
 	rootCmd.PersistentFlags().String("api-key", "", "Long-lived JWT issued from MariaDB ID")
 	rootCmd.PersistentFlags().String("host", SKYSQL_API, "URL for the SkySQL API")
-	rootCmd.PersistentFlags().String("msvcid", MARIADB_ID, "URL for MariaDB ID")
+	rootCmd.PersistentFlags().String("mdbid", MARIADB_ID, "URL for MariaDB ID")
 
 	viper.BindPFlag("api_key", rootCmd.PersistentFlags().Lookup("api-key"))
 	viper.BindPFlag("host", rootCmd.PersistentFlags().Lookup("host"))
-	viper.BindPFlag("msvcid", rootCmd.PersistentFlags().Lookup("msvcid"))
+	viper.BindPFlag("mdbid", rootCmd.PersistentFlags().Lookup("mdbid"))
 }
 
 // initConfig reads in config file and ENV variables if set.
