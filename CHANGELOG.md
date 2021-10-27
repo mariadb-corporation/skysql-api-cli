@@ -1,3 +1,15 @@
+# v0.0.13 (Wed Oct 27 2021)
+
+#### 🐛 Bug Fix
+
+- Rename msvcid flag back to mdbid [#24](https://github.com/mariadb-corporation/skysql-api-cli/pull/24) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.12 (Mon Oct 25 2021)
 
 #### 🚀 Enhancement
