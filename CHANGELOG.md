@@ -1,3 +1,15 @@
+# v0.0.14 (Wed Nov 03 2021)
+
+#### 🚀 Enhancement
+
+- Add `ssl_tls` field to create service requests [#25](https://github.com/mariadb-corporation/skysql-api-cli/pull/25) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.13 (Wed Oct 27 2021)
 
 #### 🐛 Bug Fix
