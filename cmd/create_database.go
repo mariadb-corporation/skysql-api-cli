@@ -38,23 +38,25 @@ var (
 			monitor := viper.GetString(MONITOR)
 			maxscaleProxy := viper.GetString(MAXSCALE_PROXY)
 			volumeIOPS := viper.GetString(VOLUME_IOPS)
-			volumeType := viper.GetString(VOLUME_TYPE)
+			volumeType := skysql.ServiceInVolumeType(viper.GetString(VOLUME_TYPE))
+			ssltls := skysql.ServiceInSslTls(viper.GetString(SSL_TLS))
 			reqBody := skysql.CreateServiceJSONRequestBody{
 				ReleaseVersion: viper.GetString(RELEASE_VERSION),
-				Topology:       viper.GetString(TOPOLOGY),
+				Topology:       skysql.ServiceInTopology(viper.GetString(TOPOLOGY)),
 				Size:           viper.GetString(SIZE),
 				TxStorage:      viper.GetString(STORAGE),
 				MaxscaleConfig: &maxscaleConfig,
 				Name:           viper.GetString(NAME),
 				Region:         viper.GetString(REGION),
 				ReplRegion:     &replRegion,
-				Provider:       viper.GetString(PROVIDER),
+				Provider:       skysql.ServiceInProvider(viper.GetString(PROVIDER)),
 				Replicas:       viper.GetString(REPLICAS),
 				Monitor:        &monitor,
 				MaxscaleProxy:  &maxscaleProxy,
 				VolumeIops:     &volumeIOPS,
 				VolumeType:     &volumeType,
-				Tier:           viper.GetString(TIER),
+				Tier:           skysql.ServiceInTier(viper.GetString(TIER)),
+				SslTls:         &ssltls,
 			}
 
 			res, err := client.CreateService(cmd.Context(), reqBody)
@@ -81,5 +83,6 @@ func init() {
 	createServiceCmd.Flags().String(MAXSCALE_PROXY, DEFAULT_CREATE_SERVICE_MAXSCALE_PROXY, "Whether to set up a proxy for maxscale")
 	createServiceCmd.Flags().String(VOLUME_IOPS, DEFAULT_CREATE_SERVICE_VOLUME_IOPS, "Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS")
 	createServiceCmd.Flags().String(VOLUME_TYPE, DEFAULT_CREATE_SERVICE_VOLUME_TYPE, "Type of volume to use (e.g. io1, gp3). Required for Amazon AWS")
-	createServiceCmd.Flags().String(TIER, DEFAULT_CREATE_SERVICE_VOLUME_TYPE, fmt.Sprintf("%s in which to provision %s", strings.ToTitle(TIER), SERVICE))
+	createServiceCmd.Flags().String(TIER, DEFAULT_CREATE_SERVICE_TIER, fmt.Sprintf("%s in which to provision %s", strings.Title(TIER), SERVICE))
+	createServiceCmd.Flags().String(SSL_TLS, DEFAULT_CREATE_SERVICE_SSL_TLS, "Specify whether to use SSL/TLS encryption")
 }
