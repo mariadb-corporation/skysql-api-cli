@@ -44,6 +44,7 @@ const (
 	SIZE            = "size"
 	SIZES           = "sizes"
 	STATUS          = "status"
+	SSL_TLS         = "ssl-tls"
 	STORAGE         = "storage"
 	TIER            = "tier"
 	TIERS           = "tiers"
@@ -77,6 +78,8 @@ const (
 	DEFAULT_CREATE_SERVICE_MAXSCALE_PROXY  = "false"
 	DEFAULT_CREATE_SERVICE_VOLUME_IOPS     = ""
 	DEFAULT_CREATE_SERVICE_VOLUME_TYPE     = ""
+	DEFAULT_CREATE_SERVICE_TIER            = ""
+	DEFAULT_CREATE_SERVICE_SSL_TLS         = "Enabled"
 
 	DEFAULT_UPDATE_SERVICE_NAME = ""
 
