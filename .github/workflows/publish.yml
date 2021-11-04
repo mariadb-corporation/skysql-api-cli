@@ -4,9 +4,35 @@ on:
     branches:
       - main
 jobs:
+  version-info:
+    name: Version info
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.compute_tag.outputs.next_tag }}
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v2
+        with: # https://stackoverflow.com/a/65081720
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: "0"
+      - name: Install Auto
+        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels
+      - id: auto_version # https://github.com/intuit/auto/issues/2062
+        name: Get version bump type
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION_TYPE=$(auto version) && echo "VERSION_TYPE=${VERSION_TYPE}" >> "${GITHUB_ENV}"
+      - id: compute_tag
+        name: Compute next tag
+        uses: craig-day/compute-tag@v10
+        with:
+          github_token: ${{ github.token }}
+          version_type: ${{ env.VERSION_TYPE }}
   artifacts:
     name: Build artifacts
     runs-on: ${{ matrix.os }}
+    needs: version-info
     env:
       GOPRIVATE: github.com/mariadb-corporation
     strategy:
@@ -32,8 +58,6 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.17
-      - name: Install Auto
-        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels
       - name: Configure git for private repos
         run : |
           git config --global url."https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/mariadb-corporation".insteadOf "https://github.com/mariadb-corporation"
@@ -49,23 +73,15 @@ jobs:
         with:
           path: ${{ matrix.artifact }}
           key: ${{ matrix.name }}-binary-${{ github.sha }}
-      - id: auto_version # https://github.com/intuit/auto/issues/2062
-        name: Get version bump type
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          VERSION_TYPE=$(auto version) && echo "VERSION_TYPE=${VERSION_TYPE}" >> "${GITHUB_ENV}"
-      - id: compute_tag
-        name: Compute next tag
-        uses: craig-day/compute-tag@v10
-        with:
-          github_token: ${{ github.token }}
-          version_type: ${{ env.VERSION_TYPE }}
       - name: Build
         run: |
-          go build -ldflags "-X github.com/mariadb-corporation/skysqlcli/cmd.Version=${{ steps.compute_tag.outputs.next_tag }}" -o ${{ matrix.artifact }} .
+          go build -ldflags "-X github.com/mariadb-corporation/skysqlcli/cmd.Version=${{ needs.version-info.outputs.version }}" -o ${{ matrix.artifact }} .
+      - name: Log version
+        run: |
+          ./${{ matrix.artifact }} --version
   release:
     name: Publish new release
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: [artifacts]
     outputs:
