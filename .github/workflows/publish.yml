@@ -49,9 +49,21 @@ jobs:
         with:
           path: ${{ matrix.artifact }}
           key: ${{ matrix.name }}-binary-${{ github.sha }}
+      - id: auto_version # https://github.com/intuit/auto/issues/2062
+        name: Get version bump type
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION_TYPE=$(auto version) && echo "VERSION_TYPE=${VERSION_TYPE}" >> "${GITHUB_ENV}"
+      - id: compute_tag
+        name: Compute next tag
+        uses: craig-day/compute-tag@v10
+        with:
+          github_token: ${{ github.token }}
+          version_type: ${{ env.VERSION_TYPE }}
       - name: Build
         run: |
-          go build -ldflags "-X github.com/mariadb-corporation/skysqlcli/cmd.Version=$(auto release -d | grep -Po ' Would have created a release on GitHub for version: \K[^ ]+')" -o ${{ matrix.artifact }} .
+          go build -ldflags "-X github.com/mariadb-corporation/skysqlcli/cmd.Version=${{ steps.compute_tag.outputs.next_tag }}" -o ${{ matrix.artifact }} .
   release:
     name: Publish new release
     runs-on: ubuntu-latest
