@@ -1,3 +1,15 @@
+# v0.0.15 (Thu Nov 04 2021)
+
+#### 🐛 Bug Fix
+
+- Use kebab case for api-key flag in config file [#26](https://github.com/mariadb-corporation/skysql-api-cli/pull/26) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.14 (Wed Nov 03 2021)
 
 #### 🚀 Enhancement
