@@ -69,7 +69,7 @@ var (
 				return
 			}
 
-			apiKey := viper.GetString("api_key")
+			apiKey := viper.GetString("api-key")
 			if apiKey == "" {
 				crash("required flag \"api-key\" not set " + cmd.Use)
 			}
@@ -132,7 +132,7 @@ func init() {
 	rootCmd.PersistentFlags().String("host", SKYSQL_API, "URL for the SkySQL API")
 	rootCmd.PersistentFlags().String("mdbid", MARIADB_ID, "URL for MariaDB ID")
 
-	viper.BindPFlag("api_key", rootCmd.PersistentFlags().Lookup("api-key"))
+	viper.BindPFlag("api-key", rootCmd.PersistentFlags().Lookup("api-key"))
 	viper.BindPFlag("host", rootCmd.PersistentFlags().Lookup("host"))
 	viper.BindPFlag("mdbid", rootCmd.PersistentFlags().Lookup("mdbid"))
 }
