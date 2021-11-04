@@ -64,6 +64,7 @@ var (
 		Short:     "CLI client to interact with the SkySQL API",
 		Long:      `A command line tool for managing resources deployed into MariaDB SkySQL`,
 		ValidArgs: validArgs,
+		Version:   Version,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			if _, ok := skipAuth[cmd.Use]; ok {
 				return
