@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  GOPRIVATE: github.com/mariadb-corporation
 jobs:
   version-info:
     name: Version info
@@ -33,8 +35,6 @@ jobs:
     name: Build artifacts
     runs-on: ${{ matrix.os }}
     needs: version-info
-    env:
-      GOPRIVATE: github.com/mariadb-corporation
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest]
@@ -94,6 +94,15 @@ jobs:
           fetch-depth: "0"
       - name: Install Auto
         run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels @auto-it/exec
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+      - name: Configure git for private repos
+        run : |
+          git config --global url."https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/mariadb-corporation".insteadOf "https://github.com/mariadb-corporation"
+      - name: Install Deps
+        run : make deps
       - name: linux binary
         id: linux-binary
         uses: actions/cache@v2
