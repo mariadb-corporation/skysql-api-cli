@@ -1,0 +1,72 @@
+name: skysqlcli create service
+synopsis: Create a new service
+description: Submits request to MariaDB SkySQL to deploy a new service
+usage: skysqlcli create service [flags]
+options:
+- name: help
+  shorthand: h
+  default_value: "false"
+  usage: help for service
+- name: maxscale-config
+  shorthand: m
+  usage: Configurations for maxscale
+- name: maxscale-proxy
+  default_value: "false"
+  usage: Whether to set up a proxy for maxscale
+- name: monitor
+  default_value: "false"
+  usage: Whether to deploy a monitoring cluster alongside the service
+- name: name
+  shorthand: "n"
+  usage: Name used to identify the service
+- name: provider
+  shorthand: p
+  usage: Cloud provider to host the service
+- name: region
+  shorthand: r
+  usage: Geographic region to deploy the service
+- name: release-version
+  shorthand: v
+  usage: Release version to deploy
+- name: repl-region
+  usage: Replica region for the service
+- name: replicas
+  default_value: "0"
+  usage: Number of replicas to deploy
+- name: size
+  shorthand: s
+  default_value: Sky-2x4
+  usage: Size of the nodes running the service
+- name: ssl-tls
+  default_value: Enabled
+  usage: Specify whether to use SSL/TLS encryption
+- name: storage
+  shorthand: g
+  default_value: "100"
+  usage: Size of the persistent storage disk
+- name: tier
+  usage: Tier in which to provision service
+- name: topology
+  shorthand: t
+  default_value: Standalone
+  usage: Service topology to select
+- name: volume-iops
+  usage: |
+    Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS
+- name: volume-type
+  usage: |
+    Type of volume to use (e.g. io1, gp3). Required for Amazon AWS
+inherited_options:
+- name: api-key
+  usage: Long-lived JWT issued from MariaDB ID
+- name: config
+  shorthand: c
+  usage: config file (default $HOME/.skysqlcli.yaml)
+- name: host
+  default_value: https://api.dev.gcp.mariadb.net
+  usage: URL for the SkySQL API
+- name: mdbid
+  default_value: https://id-dev.mariadb.com
+  usage: URL for MariaDB ID
+see_also:
+- skysqlcli create - Create a resource in MariaDB SkySQL

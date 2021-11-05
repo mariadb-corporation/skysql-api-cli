@@ -1,0 +1,53 @@
+.nh
+.TH "SkySQL CLI Client" "3" "Nov 2021" "MariaDB Corporation" ""
+
+.SH NAME
+.PP
+skysqlcli\-update\-configuration \- Update a configuration
+
+
+.SH SYNOPSIS
+.PP
+\fBskysqlcli update configuration [CONFIGURATION] [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Updates a configuration for user in MariaDB SkySQL.
+
+
+.SH OPTIONS
+.PP
+\fB\-j\fP, \fB\-\-config\-json\fP=""
+	JSON object containing configuration
+
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+	help for configuration
+
+.PP
+\fB\-n\fP, \fB\-\-name\fP=""
+	Name used to identify the configuration
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-api\-key\fP=""
+	Long\-lived JWT issued from MariaDB ID
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=""
+	config file (default $HOME/.skysqlcli.yaml)
+
+.PP
+\fB\-\-host\fP="https://api.dev.gcp.mariadb.net"
+	URL for the SkySQL API
+
+.PP
+\fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
+	URL for MariaDB ID
+
+
+.SH SEE ALSO
+.PP
+\fBskysqlcli\-update(3)\fP

@@ -1,0 +1,24 @@
+name: skysqlcli delete service
+synopsis: Delete an existing service
+description: |
+  Submits request to MariaDB SkySQL to delete an existing service. Specify a service using the service id (e.g. db00000000)
+usage: skysqlcli delete service [SERVICE] [flags]
+options:
+- name: help
+  shorthand: h
+  default_value: "false"
+  usage: help for service
+inherited_options:
+- name: api-key
+  usage: Long-lived JWT issued from MariaDB ID
+- name: config
+  shorthand: c
+  usage: config file (default $HOME/.skysqlcli.yaml)
+- name: host
+  default_value: https://api.dev.gcp.mariadb.net
+  usage: URL for the SkySQL API
+- name: mdbid
+  default_value: https://id-dev.mariadb.com
+  usage: URL for MariaDB ID
+see_also:
+- skysqlcli delete - Delete a resource in MariaDB SkySQL

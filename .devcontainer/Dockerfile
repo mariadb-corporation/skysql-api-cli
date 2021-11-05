@@ -13,7 +13,7 @@ ENV GOPRIVATE=github.com/mariadb-corporation
 ENV GO111MODULE=on
 
 # [Optional] Uncomment the next line to use go get to install anything else you need
-RUN npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels && \
+RUN npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels @auto-it/exec && \
     git config --global url."ssh://git@github.com:".insteadOf "https://github.com/" && \
     go get github.com/spf13/cobra/cobra && \
     chown -R vscode /go/pkg && \

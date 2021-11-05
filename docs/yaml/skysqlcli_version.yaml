@@ -1,0 +1,23 @@
+name: skysqlcli version
+synopsis: Print the version number
+description: Print the version number of the cli
+usage: skysqlcli version [flags]
+options:
+- name: help
+  shorthand: h
+  default_value: "false"
+  usage: help for version
+inherited_options:
+- name: api-key
+  usage: Long-lived JWT issued from MariaDB ID
+- name: config
+  shorthand: c
+  usage: config file (default $HOME/.skysqlcli.yaml)
+- name: host
+  default_value: https://api.dev.gcp.mariadb.net
+  usage: URL for the SkySQL API
+- name: mdbid
+  default_value: https://id-dev.mariadb.com
+  usage: URL for MariaDB ID
+see_also:
+- skysqlcli - CLI client to interact with the SkySQL API

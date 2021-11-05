@@ -1,0 +1,49 @@
+.nh
+.TH "SkySQL CLI Client" "3" "Nov 2021" "MariaDB Corporation" ""
+
+.SH NAME
+.PP
+skysqlcli\-update\-service \- Update an existing service
+
+
+.SH SYNOPSIS
+.PP
+\fBskysqlcli update service [SERVICE] [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Submits request to MariaDB SkySQL to update an existing service. Specify a service using the service id (e.g. db00000000)
+
+
+.SH OPTIONS
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+	help for service
+
+.PP
+\fB\-n\fP, \fB\-\-name\fP=""
+	Name used to identify the service
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-api\-key\fP=""
+	Long\-lived JWT issued from MariaDB ID
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=""
+	config file (default $HOME/.skysqlcli.yaml)
+
+.PP
+\fB\-\-host\fP="https://api.dev.gcp.mariadb.net"
+	URL for the SkySQL API
+
+.PP
+\fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
+	URL for MariaDB ID
+
+
+.SH SEE ALSO
+.PP
+\fBskysqlcli\-update(3)\fP

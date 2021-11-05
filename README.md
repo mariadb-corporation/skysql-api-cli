@@ -20,6 +20,8 @@ To view the commands that are available, use...
 skysqlcli --help
 ```
 
+The usage information is also [available in markdown form in the repository](docs/md/skysqlcli.md).
+
 ### Configuration
 
 Environment variables read by this cli client are all prefixed with `SKYSQL_`, and use the same flags as the command line with any hyphens replaced with underscores and using uppercase. For example, to provide the `--api-key` flag via an environment variable, export the value using `SKYSQL_API_KEY`.

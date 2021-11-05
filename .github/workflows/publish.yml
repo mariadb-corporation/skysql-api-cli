@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: "0"
       - name: Install Auto
-        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels
+        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels @auto-it/exec
       - id: auto_version # https://github.com/intuit/auto/issues/2062
         name: Get version bump type
         env:
@@ -93,7 +93,7 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: "0"
       - name: Install Auto
-        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels
+        run : npm i -g auto @auto-it/upload-assets @auto-it/git-tag @auto-it/pr-body-labels @auto-it/exec
       - name: linux binary
         id: linux-binary
         uses: actions/cache@v2
