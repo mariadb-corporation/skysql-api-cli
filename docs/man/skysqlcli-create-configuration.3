@@ -1,0 +1,57 @@
+.nh
+.TH "SkySQL CLI Client" "3" "Nov 2021" "MariaDB Corporation" ""
+
+.SH NAME
+.PP
+skysqlcli\-create\-configuration \- Create a new configuration
+
+
+.SH SYNOPSIS
+.PP
+\fBskysqlcli create configuration [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Creates a new configuration for user in MariaDB SkySQL.
+
+
+.SH OPTIONS
+.PP
+\fB\-j\fP, \fB\-\-config\-json\fP="\\n\\t\\t{\\n\\t\\t\\t\\"variables\\": {\\n\\t\\t\\t\\t\\"interactive\_timeout\\": {\\n\\t\\t\\t\\t\\t\\"type\\": \\"number\\",\\n\\t\\t\\t\\t\\t\\"value\\": \\"300\\",\\n\\t\\t\\t\\t\\t\\"requires\_restart\\": true,\\n\\t\\t\\t\\t\\t\\"regex\\": \\"\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t}\\n\\t\\t}\\n\\t"
+	JSON object containing configuration
+
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+	help for configuration
+
+.PP
+\fB\-n\fP, \fB\-\-name\fP="HA"
+	Name used to identify the configuration
+
+.PP
+\fB\-t\fP, \fB\-\-topology\fP="Primary/Replica"
+	Configuration topology to select
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-api\-key\fP=""
+	Long\-lived JWT issued from MariaDB ID
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=""
+	config file (default $HOME/.skysqlcli.yaml)
+
+.PP
+\fB\-\-host\fP="https://api.dev.gcp.mariadb.net"
+	URL for the SkySQL API
+
+.PP
+\fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
+	URL for MariaDB ID
+
+
+.SH SEE ALSO
+.PP
+\fBskysqlcli\-create(3)\fP

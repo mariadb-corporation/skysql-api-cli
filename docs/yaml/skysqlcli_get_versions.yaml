@@ -1,0 +1,28 @@
+name: skysqlcli get versions
+synopsis: Retrieve list of MariaDB SkySQL service versions
+description: |
+  Retrieves list of service versions available for use with MariaDB SkySQL
+usage: skysqlcli get versions [flags]
+options:
+- name: help
+  shorthand: h
+  default_value: "false"
+  usage: help for versions
+inherited_options:
+- name: api-key
+  usage: Long-lived JWT issued from MariaDB ID
+- name: config
+  shorthand: c
+  usage: config file (default $HOME/.skysqlcli.yaml)
+- name: host
+  default_value: https://api.dev.gcp.mariadb.net
+  usage: URL for the SkySQL API
+- name: limit
+  shorthand: l
+  default_value: "10"
+  usage: Number of records to return
+- name: mdbid
+  default_value: https://id-dev.mariadb.com
+  usage: URL for MariaDB ID
+see_also:
+- skysqlcli get - Query MariaDB SkySQL for resource information

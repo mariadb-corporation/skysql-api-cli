@@ -2,6 +2,12 @@
   "plugins": [
     "git-tag",
     "pr-body-labels",
+    [
+      "exec",
+      {
+        "beforeCommitChangelog": "make docs"
+      }
+    ],
     ["upload-assets", ["./skysqlcli-linux", "./skysqlcli-macos", "./skysqlcli-windows.exe"]]
   ],
   "owner": "mariadb-corporation",

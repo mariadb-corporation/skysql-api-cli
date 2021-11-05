@@ -1,0 +1,24 @@
+name: skysqlcli delete allowed-address
+synopsis: Delete an allowed address from a service
+description: |
+  Deletes an allowed address for user on service in MariaDB SkySQL.
+usage: skysqlcli delete allowed-address [SERVICE] [ALLOWED-ADDRESS] [flags]
+options:
+- name: help
+  shorthand: h
+  default_value: "false"
+  usage: help for allowed-address
+inherited_options:
+- name: api-key
+  usage: Long-lived JWT issued from MariaDB ID
+- name: config
+  shorthand: c
+  usage: config file (default $HOME/.skysqlcli.yaml)
+- name: host
+  default_value: https://api.dev.gcp.mariadb.net
+  usage: URL for the SkySQL API
+- name: mdbid
+  default_value: https://id-dev.mariadb.com
+  usage: URL for MariaDB ID
+see_also:
+- skysqlcli delete - Delete a resource in MariaDB SkySQL

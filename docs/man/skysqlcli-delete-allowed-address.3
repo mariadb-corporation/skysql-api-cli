@@ -1,0 +1,45 @@
+.nh
+.TH "SkySQL CLI Client" "3" "Nov 2021" "MariaDB Corporation" ""
+
+.SH NAME
+.PP
+skysqlcli\-delete\-allowed\-address \- Delete an allowed address from a service
+
+
+.SH SYNOPSIS
+.PP
+\fBskysqlcli delete allowed\-address [SERVICE] [ALLOWED\-ADDRESS] [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Deletes an allowed address for user on service in MariaDB SkySQL.
+
+
+.SH OPTIONS
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+	help for allowed\-address
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-api\-key\fP=""
+	Long\-lived JWT issued from MariaDB ID
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=""
+	config file (default $HOME/.skysqlcli.yaml)
+
+.PP
+\fB\-\-host\fP="https://api.dev.gcp.mariadb.net"
+	URL for the SkySQL API
+
+.PP
+\fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
+	URL for MariaDB ID
+
+
+.SH SEE ALSO
+.PP
+\fBskysqlcli\-delete(3)\fP

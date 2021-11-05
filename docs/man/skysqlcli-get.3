@@ -1,0 +1,49 @@
+.nh
+.TH "SkySQL CLI Client" "3" "Nov 2021" "MariaDB Corporation" ""
+
+.SH NAME
+.PP
+skysqlcli\-get \- Query MariaDB SkySQL for resource information
+
+
+.SH SYNOPSIS
+.PP
+\fBskysqlcli get [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Commands which retrieve data about resources deployed into MariaDB SkySQL
+
+
+.SH OPTIONS
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+	help for get
+
+.PP
+\fB\-l\fP, \fB\-\-limit\fP=10
+	Number of records to return
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-api\-key\fP=""
+	Long\-lived JWT issued from MariaDB ID
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=""
+	config file (default $HOME/.skysqlcli.yaml)
+
+.PP
+\fB\-\-host\fP="https://api.dev.gcp.mariadb.net"
+	URL for the SkySQL API
+
+.PP
+\fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
+	URL for MariaDB ID
+
+
+.SH SEE ALSO
+.PP
+\fBskysqlcli(3)\fP, \fBskysqlcli\-get\-allowlist(3)\fP, \fBskysqlcli\-get\-configurations(3)\fP, \fBskysqlcli\-get\-products(3)\fP, \fBskysqlcli\-get\-providers(3)\fP, \fBskysqlcli\-get\-quotas(3)\fP, \fBskysqlcli\-get\-regions(3)\fP, \fBskysqlcli\-get\-services(3)\fP, \fBskysqlcli\-get\-sizes(3)\fP, \fBskysqlcli\-get\-status(3)\fP, \fBskysqlcli\-get\-tiers(3)\fP, \fBskysqlcli\-get\-topologies(3)\fP, \fBskysqlcli\-get\-versions(3)\fP

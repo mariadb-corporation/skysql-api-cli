@@ -1,0 +1,109 @@
+.nh
+.TH "SkySQL CLI Client" "3" "Nov 2021" "MariaDB Corporation" ""
+
+.SH NAME
+.PP
+skysqlcli\-create\-service \- Create a new service
+
+
+.SH SYNOPSIS
+.PP
+\fBskysqlcli create service [flags]\fP
+
+
+.SH DESCRIPTION
+.PP
+Submits request to MariaDB SkySQL to deploy a new service
+
+
+.SH OPTIONS
+.PP
+\fB\-h\fP, \fB\-\-help\fP[=false]
+	help for service
+
+.PP
+\fB\-m\fP, \fB\-\-maxscale\-config\fP=""
+	Configurations for maxscale
+
+.PP
+\fB\-\-maxscale\-proxy\fP="false"
+	Whether to set up a proxy for maxscale
+
+.PP
+\fB\-\-monitor\fP="false"
+	Whether to deploy a monitoring cluster alongside the service
+
+.PP
+\fB\-n\fP, \fB\-\-name\fP=""
+	Name used to identify the service
+
+.PP
+\fB\-p\fP, \fB\-\-provider\fP=""
+	Cloud provider to host the service
+
+.PP
+\fB\-r\fP, \fB\-\-region\fP=""
+	Geographic region to deploy the service
+
+.PP
+\fB\-v\fP, \fB\-\-release\-version\fP=""
+	Release version to deploy
+
+.PP
+\fB\-\-repl\-region\fP=""
+	Replica region for the service
+
+.PP
+\fB\-\-replicas\fP="0"
+	Number of replicas to deploy
+
+.PP
+\fB\-s\fP, \fB\-\-size\fP="Sky\-2x4"
+	Size of the nodes running the service
+
+.PP
+\fB\-\-ssl\-tls\fP="Enabled"
+	Specify whether to use SSL/TLS encryption
+
+.PP
+\fB\-g\fP, \fB\-\-storage\fP="100"
+	Size of the persistent storage disk
+
+.PP
+\fB\-\-tier\fP=""
+	Tier in which to provision service
+
+.PP
+\fB\-t\fP, \fB\-\-topology\fP="Standalone"
+	Service topology to select
+
+.PP
+\fB\-\-volume\-iops\fP=""
+	Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS
+
+.PP
+\fB\-\-volume\-type\fP=""
+	Type of volume to use (e.g. io1, gp3). Required for Amazon AWS
+
+
+.SH OPTIONS INHERITED FROM PARENT COMMANDS
+.PP
+\fB\-\-api\-key\fP=""
+	Long\-lived JWT issued from MariaDB ID
+
+.PP
+\fB\-c\fP, \fB\-\-config\fP=""
+	config file (default $HOME/.skysqlcli.yaml)
+
+.PP
+\fB\-\-host\fP="https://api.dev.gcp.mariadb.net"
+	URL for the SkySQL API
+
+.PP
+\fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
+	URL for MariaDB ID
+
+
+.SH SEE ALSO
+.PP
+\fBskysqlcli\-create(3)\fP

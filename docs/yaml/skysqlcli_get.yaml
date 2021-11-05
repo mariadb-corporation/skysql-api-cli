@@ -1,0 +1,39 @@
+name: skysqlcli get
+synopsis: Query MariaDB SkySQL for resource information
+description: |
+  Commands which retrieve data about resources deployed into MariaDB SkySQL
+options:
+- name: help
+  shorthand: h
+  default_value: "false"
+  usage: help for get
+- name: limit
+  shorthand: l
+  default_value: "10"
+  usage: Number of records to return
+inherited_options:
+- name: api-key
+  usage: Long-lived JWT issued from MariaDB ID
+- name: config
+  shorthand: c
+  usage: config file (default $HOME/.skysqlcli.yaml)
+- name: host
+  default_value: https://api.dev.gcp.mariadb.net
+  usage: URL for the SkySQL API
+- name: mdbid
+  default_value: https://id-dev.mariadb.com
+  usage: URL for MariaDB ID
+see_also:
+- skysqlcli - CLI client to interact with the SkySQL API
+- allowlist - Retrieve list of allowed IPs for a service
+- configurations - Retrieve stored service configurations
+- products - Retrieve MariaDB SkySQL product information
+- providers - Retrieve list of cloud providers
+- quotas - Retrieve quota information
+- regions - Retrieve list of provider regions
+- services - Retrieve service information
+- sizes - Retrieve list of machine sizes
+- status - Get current status for a service
+- tiers - Retrieve list of MariaDB SkySQL account tiers
+- topologies - Retrieve list of MariaDB SkySQL service topologies
+- versions - Retrieve list of MariaDB SkySQL service versions
