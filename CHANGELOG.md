@@ -1,3 +1,20 @@
+# v0.0.16 (Fri Nov 05 2021)
+
+#### 🐛 Bug Fix
+
+- Fix auto version included in go build of cli [#27](https://github.com/mariadb-corporation/skysql-api-cli/pull/27) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### 🚢 DevOps
+
+- Determine version info at start of pipeline [#29](https://github.com/mariadb-corporation/skysql-api-cli/pull/29) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+- Install additional plugins for `intuit/auto` in build pipeline [#28](https://github.com/mariadb-corporation/skysql-api-cli/pull/28) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.15 (Thu Nov 04 2021)
 
 #### 🐛 Bug Fix
