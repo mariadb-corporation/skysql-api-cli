@@ -1,3 +1,19 @@
+# v0.0.17 (Fri Nov 05 2021)
+
+#### 🚢 DevOps
+
+- Install golang for release job in pipeline [#31](https://github.com/mariadb-corporation/skysql-api-cli/pull/31) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### 📝 Documentation
+
+- Generate cli docs as md, yaml, rst, and man pages [#30](https://github.com/mariadb-corporation/skysql-api-cli/pull/30) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.16 (Fri Nov 05 2021)
 
 #### 🐛 Bug Fix
