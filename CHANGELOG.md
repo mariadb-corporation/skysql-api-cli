@@ -1,3 +1,15 @@
+# v0.0.18 (Tue Nov 09 2021)
+
+#### 🔩 Dependency Updates
+
+- Update sdk version, rename db files to svc [#32](https://github.com/mariadb-corporation/skysql-api-cli/pull/32) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.17 (Fri Nov 05 2021)
 
 #### 🚢 DevOps
