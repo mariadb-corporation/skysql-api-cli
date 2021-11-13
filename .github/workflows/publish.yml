@@ -8,6 +8,7 @@ env:
 jobs:
   version-info:
     name: Version info
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.compute_tag.outputs.next_tag }}
@@ -33,6 +34,7 @@ jobs:
           version_type: ${{ env.VERSION_TYPE }}
   artifacts:
     name: Build artifacts
+    timeout-minutes: 10
     runs-on: ${{ matrix.os }}
     needs: version-info
     strategy:
@@ -82,6 +84,7 @@ jobs:
   release:
     name: Publish new release
     if: github.ref == 'refs/heads/main'
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     needs: [artifacts]
     outputs:
