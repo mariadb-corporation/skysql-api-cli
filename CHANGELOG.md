@@ -1,3 +1,15 @@
+# v0.0.19 (Mon Nov 15 2021)
+
+#### 🚢 DevOps
+
+- Establish reasonable defaults for job timeouts in pipeline [#33](https://github.com/mariadb-corporation/skysql-api-cli/pull/33) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.18 (Tue Nov 09 2021)
 
 #### 🔩 Dependency Updates
