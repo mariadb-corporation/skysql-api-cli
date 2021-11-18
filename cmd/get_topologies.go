@@ -21,7 +21,7 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
-			product := viper.GetString(PRODUCT)
+			product := skysql.ReadTopologiesParamsProduct(viper.GetString(PRODUCT))
 
 			var res *http.Response
 			var err error
