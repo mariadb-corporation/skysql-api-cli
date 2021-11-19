@@ -1,3 +1,19 @@
+# v0.0.20 (Fri Nov 19 2021)
+
+#### 🚀 Enhancement
+
+- Add `-n, --name` flag for querying services [#34](https://github.com/mariadb-corporation/skysql-api-cli/pull/34) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### 🚢 DevOps
+
+- Include autogen docs in staged content for release commit [#35](https://github.com/mariadb-corporation/skysql-api-cli/pull/35) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.19 (Mon Nov 15 2021)
 
 #### 🚢 DevOps

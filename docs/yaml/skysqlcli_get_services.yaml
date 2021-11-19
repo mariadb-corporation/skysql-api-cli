@@ -8,6 +8,9 @@ options:
   shorthand: h
   default_value: "false"
   usage: help for services
+- name: name
+  shorthand: "n"
+  usage: Search string to match any services containing the name
 inherited_options:
 - name: api-key
   usage: Long-lived JWT issued from MariaDB ID

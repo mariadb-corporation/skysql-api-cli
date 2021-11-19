@@ -20,7 +20,8 @@ Options
 
 ::
 
-  -h, --help   help for services
+  -h, --help          help for services
+  -n, --name string   Search string to match any services containing the name
 
 Options inherited from parent commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
