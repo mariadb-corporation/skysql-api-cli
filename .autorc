@@ -5,7 +5,7 @@
     [
       "exec",
       {
-        "beforeCommitChangelog": "make docs"
+        "beforeCommitChangelog": "make docs && git add ."
       }
     ],
     ["upload-assets", ["./skysqlcli-linux", "./skysqlcli-macos", "./skysqlcli-windows.exe"]]
