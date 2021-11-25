@@ -23,9 +23,9 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
-			product := viper.GetString(PRODUCT)
-			provider := viper.GetString(PROVIDER)
-			tier := viper.GetString(TIER)
+			product := skysql.ReadSizesParamsProduct(viper.GetString(PRODUCT))
+			provider := skysql.SnowProviders(viper.GetString(PROVIDER))
+			tier := skysql.ReadSizesParamsTier(viper.GetString(TIER))
 
 			var res *http.Response
 			var err error
@@ -33,7 +33,7 @@ var (
 				Limit:    &limit,
 				Product:  product,
 				Provider: provider,
-				Tier: 	  tier,
+				Tier:     tier,
 			})
 
 			checkAndPrint(res, err, SIZES)
