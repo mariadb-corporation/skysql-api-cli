@@ -19,7 +19,7 @@ options:
   usage: Name used to identify the configuration
 - name: topology
   shorthand: t
-  default_value: Primary/Replica
+  default_value: Read Scalable Transactions
   usage: Configuration topology to select
 inherited_options:
 - name: api-key

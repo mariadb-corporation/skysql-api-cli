@@ -16,7 +16,7 @@ skysqlcli create configuration [flags]
   -j, --config-json string   JSON object containing configuration (default "\n\t\t{\n\t\t\t\"variables\": {\n\t\t\t\t\"interactive_timeout\": {\n\t\t\t\t\t\"type\": \"number\",\n\t\t\t\t\t\"value\": \"300\",\n\t\t\t\t\t\"requires_restart\": true,\n\t\t\t\t\t\"regex\": \"\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t")
   -h, --help                 help for configuration
   -n, --name string          Name used to identify the configuration (default "HA")
-  -t, --topology string      Configuration topology to select (default "Primary/Replica")
+  -t, --topology string      Configuration topology to select (default "Read Scalable Transactions")
 ```
 
 ### Options inherited from parent commands

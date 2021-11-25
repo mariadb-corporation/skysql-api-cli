@@ -48,7 +48,7 @@ options:
   usage: Tier in which to provision service
 - name: topology
   shorthand: t
-  default_value: Standalone
+  default_value: Single Node Transactions
   usage: Service topology to select
 - name: volume-iops
   usage: |

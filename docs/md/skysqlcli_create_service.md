@@ -27,7 +27,7 @@ skysqlcli create service [flags]
       --ssl-tls string           Specify whether to use SSL/TLS encryption (default "Enabled")
   -g, --storage string           Size of the persistent storage disk (default "100")
       --tier string              Tier in which to provision service
-  -t, --topology string          Service topology to select (default "Standalone")
+  -t, --topology string          Service topology to select (default "Single Node Transactions")
       --volume-iops string       Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS
       --volume-type string       Type of volume to use (e.g. io1, gp3). Required for Amazon AWS
 ```

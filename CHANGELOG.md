@@ -1,3 +1,15 @@
+# v0.0.21 (Thu Nov 25 2021)
+
+#### 🚀 Enhancement
+
+- DBAAS-8576: Use new display values for products and topologies [#36](https://github.com/mariadb-corporation/skysql-api-cli/pull/36) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.20 (Fri Nov 19 2021)
 
 #### 🚀 Enhancement
