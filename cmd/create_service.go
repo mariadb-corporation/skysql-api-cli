@@ -49,7 +49,7 @@ var (
 				Name:           viper.GetString(NAME),
 				Region:         viper.GetString(REGION),
 				ReplRegion:     &replRegion,
-				Provider:       skysql.ServiceInProvider(viper.GetString(PROVIDER)),
+				Provider:       skysql.SnowProviders(viper.GetString(PROVIDER)),
 				Replicas:       viper.GetString(REPLICAS),
 				Monitor:        &monitor,
 				MaxscaleProxy:  &maxscaleProxy,

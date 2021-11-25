@@ -21,7 +21,7 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
-			provider := viper.GetString(PROVIDER)
+			provider := skysql.SnowProviders(viper.GetString(PROVIDER))
 
 			var res *http.Response
 			var err error
