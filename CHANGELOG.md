@@ -1,3 +1,15 @@
+# v0.0.22 (Fri Nov 26 2021)
+
+#### 🐛 Bug Fix
+
+- DBAAS-8426: Accommodate 204 No Content response for deletes [#37](https://github.com/mariadb-corporation/skysql-api-cli/pull/37) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.21 (Thu Nov 25 2021)
 
 #### 🚀 Enhancement
