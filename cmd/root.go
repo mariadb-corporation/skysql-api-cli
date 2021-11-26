@@ -38,6 +38,10 @@ func checkAndPrint(res *http.Response, err error, entityName string) {
 	checkErr(err, fmt.Sprintf("unable to retrieve %s from SkySQL", entityName))
 	defer res.Body.Close()
 
+	if res.StatusCode == http.StatusNoContent {
+		return
+	}
+
 	body, err := ioutil.ReadAll(res.Body)
 	checkErr(err, "unable to read response from SkySQL")
 
