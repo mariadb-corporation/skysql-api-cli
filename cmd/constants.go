@@ -29,6 +29,7 @@ const (
 	COMMENT         = "comment"
 	CONFIGURATION   = "configuration"
 	CONFIGURATIONS  = "configurations"
+	CREDENTIALS     = "credentials"
 	SERVICE         = "service"
 	SERVICES        = "services"
 	IP_ADDRESS      = "ip-address"
