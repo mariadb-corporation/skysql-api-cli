@@ -27,13 +27,14 @@ Commands which retrieve data about resources deployed into MariaDB SkySQL
 * [skysqlcli](skysqlcli.md)	 - CLI client to interact with the SkySQL API
 * [skysqlcli get allowlist](skysqlcli_get_allowlist.md)	 - Retrieve list of allowed IPs for a service
 * [skysqlcli get configurations](skysqlcli_get_configurations.md)	 - Retrieve stored service configurations
+* [skysqlcli get credentials](skysqlcli_get_credentials.md)	 - Retrieve default service credentials
 * [skysqlcli get products](skysqlcli_get_products.md)	 - Retrieve MariaDB SkySQL product information
 * [skysqlcli get providers](skysqlcli_get_providers.md)	 - Retrieve list of cloud providers
 * [skysqlcli get quotas](skysqlcli_get_quotas.md)	 - Retrieve quota information
 * [skysqlcli get regions](skysqlcli_get_regions.md)	 - Retrieve list of provider regions
 * [skysqlcli get services](skysqlcli_get_services.md)	 - Retrieve service information
 * [skysqlcli get sizes](skysqlcli_get_sizes.md)	 - Retrieve list of machine sizes
-* [skysqlcli get status](skysqlcli_get_status.md)	 - Get current status for a service
+* [skysqlcli get status](skysqlcli_get_status.md)	 - Retrieve current status for a service
 * [skysqlcli get tiers](skysqlcli_get_tiers.md)	 - Retrieve list of MariaDB SkySQL account tiers
 * [skysqlcli get topologies](skysqlcli_get_topologies.md)	 - Retrieve list of MariaDB SkySQL service topologies
 * [skysqlcli get versions](skysqlcli_get_versions.md)	 - Retrieve list of MariaDB SkySQL service versions

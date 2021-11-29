@@ -1,3 +1,15 @@
+# v0.0.23 (Mon Nov 29 2021)
+
+#### 🚀 Enhancement
+
+- DBAAS-8521: Add `skysqlcli get credentials` command for default creds [#38](https://github.com/mariadb-corporation/skysql-api-cli/pull/38) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.22 (Fri Nov 26 2021)
 
 #### 🐛 Bug Fix

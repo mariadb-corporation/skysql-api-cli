@@ -1,19 +1,19 @@
-## skysqlcli get status
+## skysqlcli get credentials
 
-Retrieve current status for a service
+Retrieve default service credentials
 
 ### Synopsis
 
-Retrieve the current status of a service in MariaDB SkySQL
+Queries for default credentials configured for a service. Specify a service using the service id (e.g. db00000000)
 
 ```
-skysqlcli get status [SERVICE] [flags]
+skysqlcli get credentials [SERVICE] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for status
+  -h, --help   help for credentials
 ```
 
 ### Options inherited from parent commands

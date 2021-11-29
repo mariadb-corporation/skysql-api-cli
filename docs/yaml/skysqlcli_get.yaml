@@ -27,13 +27,14 @@ see_also:
 - skysqlcli - CLI client to interact with the SkySQL API
 - allowlist - Retrieve list of allowed IPs for a service
 - configurations - Retrieve stored service configurations
+- credentials - Retrieve default service credentials
 - products - Retrieve MariaDB SkySQL product information
 - providers - Retrieve list of cloud providers
 - quotas - Retrieve quota information
 - regions - Retrieve list of provider regions
 - services - Retrieve service information
 - sizes - Retrieve list of machine sizes
-- status - Get current status for a service
+- status - Retrieve current status for a service
 - tiers - Retrieve list of MariaDB SkySQL account tiers
 - topologies - Retrieve list of MariaDB SkySQL service topologies
 - versions - Retrieve list of MariaDB SkySQL service versions
