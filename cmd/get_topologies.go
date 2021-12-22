@@ -17,17 +17,17 @@ var (
 		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", SERVICE, TOPOLOGIES),
 		Args:    cobra.NoArgs,
 		PreRun: func(cmd *cobra.Command, args []string) {
-			viper.BindPFlag(PRODUCT, cmd.PersistentFlags().Lookup(PRODUCT))
+			viper.BindPFlag(SERVICE_TYPE, cmd.PersistentFlags().Lookup(SERVICE_TYPE))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
-			product := skysql.ReadTopologiesParamsProduct(viper.GetString(PRODUCT))
+			serviceType := skysql.ReadTopologiesParamsServiceType(viper.GetString(SERVICE_TYPE))
 
 			var res *http.Response
 			var err error
 			res, err = client.ReadTopologies(cmd.Context(), &skysql.ReadTopologiesParams{
-				Limit:   &limit,
-				Product: product,
+				Limit:       &limit,
+				ServiceType: serviceType,
 			})
 
 			checkAndPrint(res, err, TOPOLOGIES)
@@ -38,5 +38,5 @@ var (
 func init() {
 	getCmd.AddCommand(getTopologyCmd)
 
-	getTopologyCmd.PersistentFlags().StringP(PRODUCT, "p", "", fmt.Sprintf("MariaDB SkySQL %s used to filter list of %s", PRODUCT, TOPOLOGIES))
+	getTopologyCmd.PersistentFlags().StringP(SERVICE_TYPE, "t", "", fmt.Sprintf("MariaDB SkySQL %s used to filter list of %s", SERVICE_TYPE, TOPOLOGIES))
 }

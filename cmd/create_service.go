@@ -34,11 +34,9 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			maxscaleConfig := viper.GetString(MAXSCALE_CONFIG)
-			replRegion := viper.GetString(REPL_REGION)
 			monitor := viper.GetString(MONITOR)
 			maxscaleProxy := viper.GetString(MAXSCALE_PROXY)
 			volumeIOPS := viper.GetString(VOLUME_IOPS)
-			volumeType := skysql.ServiceInVolumeType(viper.GetString(VOLUME_TYPE))
 			ssltls := skysql.ServiceInSslTls(viper.GetString(SSL_TLS))
 			reqBody := skysql.CreateServiceJSONRequestBody{
 				ReleaseVersion: viper.GetString(RELEASE_VERSION),
@@ -48,13 +46,11 @@ var (
 				MaxscaleConfig: &maxscaleConfig,
 				Name:           viper.GetString(NAME),
 				Region:         viper.GetString(REGION),
-				ReplRegion:     &replRegion,
 				Provider:       skysql.SnowProviders(viper.GetString(PROVIDER)),
 				Replicas:       viper.GetString(REPLICAS),
 				Monitor:        &monitor,
 				MaxscaleProxy:  &maxscaleProxy,
 				VolumeIops:     &volumeIOPS,
-				VolumeType:     &volumeType,
 				Tier:           skysql.ServiceInTier(viper.GetString(TIER)),
 				SslTls:         &ssltls,
 			}
@@ -76,13 +72,11 @@ func init() {
 	createServiceCmd.Flags().StringP(MAXSCALE_CONFIG, "m", DEFAULT_CREATE_SERVICE_MAXSCALE_CONFIG, "Configurations for maxscale")
 	createServiceCmd.Flags().StringP(NAME, "n", DEFAULT_CREATE_SERVICE_NAME, "Name used to identify the service")
 	createServiceCmd.Flags().StringP(REGION, "r", DEFAULT_CREATE_SERVICE_REGION, "Geographic region to deploy the service")
-	createServiceCmd.Flags().String(REPL_REGION, DEFAULT_CREATE_SERVICE_REPL_REGION, "Replica region for the service")
 	createServiceCmd.Flags().StringP(PROVIDER, "p", DEFAULT_CREATE_SERVICE_PROVIDER, "Cloud provider to host the service")
 	createServiceCmd.Flags().String(REPLICAS, DEFAULT_CREATE_SERVICE_REPLICAS, "Number of replicas to deploy")
 	createServiceCmd.Flags().String(MONITOR, DEFAULT_CREATE_SERVICE_MONITOR, "Whether to deploy a monitoring cluster alongside the service")
 	createServiceCmd.Flags().String(MAXSCALE_PROXY, DEFAULT_CREATE_SERVICE_MAXSCALE_PROXY, "Whether to set up a proxy for maxscale")
 	createServiceCmd.Flags().String(VOLUME_IOPS, DEFAULT_CREATE_SERVICE_VOLUME_IOPS, "Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS")
-	createServiceCmd.Flags().String(VOLUME_TYPE, DEFAULT_CREATE_SERVICE_VOLUME_TYPE, "Type of volume to use (e.g. io1, gp3). Required for Amazon AWS")
 	createServiceCmd.Flags().String(TIER, DEFAULT_CREATE_SERVICE_TIER, fmt.Sprintf("%s in which to provision %s", strings.Title(TIER), SERVICE))
 	createServiceCmd.Flags().String(SSL_TLS, DEFAULT_CREATE_SERVICE_SSL_TLS, "Specify whether to use SSL/TLS encryption")
 }
