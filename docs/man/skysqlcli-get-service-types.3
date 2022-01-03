@@ -3,27 +3,23 @@
 
 .SH NAME
 .PP
-skysqlcli\-create\-allowed\-address \- Add a new allowed address to a service
+skysqlcli\-get\-service\-types \- Retrieve MariaDB SkySQL service\-type information
 
 
 .SH SYNOPSIS
 .PP
-\fBskysqlcli create allowed\-address [SERVICE] [IP\-ADDRESS] [flags]\fP
+\fBskysqlcli get service\-types [flags]\fP
 
 
 .SH DESCRIPTION
 .PP
-Adds a new allowed address for service in MariaDB SkySQL.
+Queries information for service\-type offerings from MariaDB SkySQL
 
 
 .SH OPTIONS
 .PP
-\fB\-\-comment\fP=""
-	Additional comment to help identify address
-
-.PP
 \fB\-h\fP, \fB\-\-help\fP[=false]
-	help for allowed\-address
+	help for service\-types
 
 
 .SH OPTIONS INHERITED FROM PARENT COMMANDS
@@ -40,10 +36,14 @@ Adds a new allowed address for service in MariaDB SkySQL.
 	URL for the SkySQL API
 
 .PP
+\fB\-l\fP, \fB\-\-limit\fP=10
+	Number of records to return
+
+.PP
 \fB\-\-mdbid\fP="https://id\-dev.mariadb.com"
 	URL for MariaDB ID
 
 
 .SH SEE ALSO
 .PP
-\fBskysqlcli\-create(3)\fP
+\fBskysqlcli\-get(3)\fP

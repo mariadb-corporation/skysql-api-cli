@@ -1,3 +1,15 @@
+# v0.0.24 (Mon Jan 03 2022)
+
+#### 🚀 Enhancement
+
+- DBAAS-8407: Replace "product" with "service-type" [#39](https://github.com/mariadb-corporation/skysql-api-cli/pull/39) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.23 (Mon Nov 29 2021)
 
 #### 🚀 Enhancement

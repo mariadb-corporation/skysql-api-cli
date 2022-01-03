@@ -13,10 +13,10 @@ skysqlcli get sizes [flags]
 ### Options
 
 ```
-  -h, --help              help for sizes
-      --product string    MariaDB SkySQL product to query for machine sizes
-      --provider string   MariaDB SkySQL provider to query for machine sizes
-      --tier string       MariaDB SkySQL tier to query for machine sizes
+  -h, --help                  help for sizes
+      --provider string       MariaDB SkySQL provider to query for machine sizes
+      --service-type string   MariaDB SkySQL service-type to query for machine sizes (default "t")
+      --tier string           MariaDB SkySQL tier to query for machine sizes
 ```
 
 ### Options inherited from parent commands

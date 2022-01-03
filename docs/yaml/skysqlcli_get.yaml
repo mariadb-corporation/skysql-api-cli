@@ -28,10 +28,10 @@ see_also:
 - allowlist - Retrieve list of allowed IPs for a service
 - configurations - Retrieve stored service configurations
 - credentials - Retrieve default service credentials
-- products - Retrieve MariaDB SkySQL product information
 - providers - Retrieve list of cloud providers
 - quotas - Retrieve quota information
 - regions - Retrieve list of provider regions
+- service-types - Retrieve MariaDB SkySQL service-type information
 - services - Retrieve service information
 - sizes - Retrieve list of machine sizes
 - status - Retrieve current status for a service

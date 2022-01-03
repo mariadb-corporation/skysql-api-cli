@@ -1,20 +1,19 @@
-## skysqlcli get topologies
+## skysqlcli get service-types
 
-Retrieve list of MariaDB SkySQL service topologies
+Retrieve MariaDB SkySQL service-type information
 
 ### Synopsis
 
-Retrieves list of service topologies available for use with MariaDB SkySQL
+Queries information for service-type offerings from MariaDB SkySQL
 
 ```
-skysqlcli get topologies [flags]
+skysqlcli get service-types [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help                  help for topologies
-  -t, --service-type string   MariaDB SkySQL service-type used to filter list of topologies
+  -h, --help   help for service-types
 ```
 
 ### Options inherited from parent commands

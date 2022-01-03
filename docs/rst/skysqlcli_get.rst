@@ -36,10 +36,10 @@ SEE ALSO
 * `skysqlcli get allowlist <skysqlcli_get_allowlist.rst>`_ 	 - Retrieve list of allowed IPs for a service
 * `skysqlcli get configurations <skysqlcli_get_configurations.rst>`_ 	 - Retrieve stored service configurations
 * `skysqlcli get credentials <skysqlcli_get_credentials.rst>`_ 	 - Retrieve default service credentials
-* `skysqlcli get products <skysqlcli_get_products.rst>`_ 	 - Retrieve MariaDB SkySQL product information
 * `skysqlcli get providers <skysqlcli_get_providers.rst>`_ 	 - Retrieve list of cloud providers
 * `skysqlcli get quotas <skysqlcli_get_quotas.rst>`_ 	 - Retrieve quota information
 * `skysqlcli get regions <skysqlcli_get_regions.rst>`_ 	 - Retrieve list of provider regions
+* `skysqlcli get service-types <skysqlcli_get_service-types.rst>`_ 	 - Retrieve MariaDB SkySQL service-type information
 * `skysqlcli get services <skysqlcli_get_services.rst>`_ 	 - Retrieve service information
 * `skysqlcli get sizes <skysqlcli_get_sizes.rst>`_ 	 - Retrieve list of machine sizes
 * `skysqlcli get status <skysqlcli_get_status.rst>`_ 	 - Retrieve current status for a service

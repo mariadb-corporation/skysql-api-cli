@@ -28,8 +28,6 @@ options:
 - name: release-version
   shorthand: v
   usage: Release version to deploy
-- name: repl-region
-  usage: Replica region for the service
 - name: replicas
   default_value: "0"
   usage: Number of replicas to deploy
@@ -53,9 +51,6 @@ options:
 - name: volume-iops
   usage: |
     Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS
-- name: volume-type
-  usage: |
-    Type of volume to use (e.g. io1, gp3). Required for Amazon AWS
 inherited_options:
 - name: api-key
   usage: Long-lived JWT issued from MariaDB ID

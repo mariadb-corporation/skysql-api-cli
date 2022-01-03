@@ -8,9 +8,10 @@ options:
   shorthand: h
   default_value: "false"
   usage: help for topologies
-- name: product
-  shorthand: p
-  usage: MariaDB SkySQL product used to filter list of topologies
+- name: service-type
+  shorthand: t
+  usage: |
+    MariaDB SkySQL service-type used to filter list of topologies
 inherited_options:
 - name: api-key
   usage: Long-lived JWT issued from MariaDB ID

@@ -1,20 +1,13 @@
-name: skysqlcli get sizes
-synopsis: Retrieve list of machine sizes
+name: skysqlcli get service-types
+synopsis: Retrieve MariaDB SkySQL service-type information
 description: |
-  Retrieves list of machine sizes available for use with MariaDB SkySQL
-usage: skysqlcli get sizes [flags]
+  Queries information for service-type offerings from MariaDB SkySQL
+usage: skysqlcli get service-types [flags]
 options:
 - name: help
   shorthand: h
   default_value: "false"
-  usage: help for sizes
-- name: provider
-  usage: MariaDB SkySQL provider to query for machine sizes
-- name: service-type
-  default_value: t
-  usage: MariaDB SkySQL service-type to query for machine sizes
-- name: tier
-  usage: MariaDB SkySQL tier to query for machine sizes
+  usage: help for service-types
 inherited_options:
 - name: api-key
   usage: Long-lived JWT issued from MariaDB ID

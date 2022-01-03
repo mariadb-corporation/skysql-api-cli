@@ -20,8 +20,8 @@ Options
 
 ::
 
-  -h, --help             help for topologies
-  -p, --product string   MariaDB SkySQL product used to filter list of topologies
+  -h, --help                  help for topologies
+  -t, --service-type string   MariaDB SkySQL service-type used to filter list of topologies
 
 Options inherited from parent commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,29 +1,26 @@
-.. _skysqlcli_get_sizes:
+.. _skysqlcli_get_service-types:
 
-skysqlcli get sizes
--------------------
+skysqlcli get service-types
+---------------------------
 
-Retrieve list of machine sizes
+Retrieve MariaDB SkySQL service-type information
 
 Synopsis
 ~~~~~~~~
 
 
-Retrieves list of machine sizes available for use with MariaDB SkySQL
+Queries information for service-type offerings from MariaDB SkySQL
 
 ::
 
-  skysqlcli get sizes [flags]
+  skysqlcli get service-types [flags]
 
 Options
 ~~~~~~~
 
 ::
 
-  -h, --help                  help for sizes
-      --provider string       MariaDB SkySQL provider to query for machine sizes
-      --service-type string   MariaDB SkySQL service-type to query for machine sizes (default "t")
-      --tier string           MariaDB SkySQL tier to query for machine sizes
+  -h, --help   help for service-types
 
 Options inherited from parent commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

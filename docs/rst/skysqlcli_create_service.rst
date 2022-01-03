@@ -28,7 +28,6 @@ Options
   -p, --provider string          Cloud provider to host the service
   -r, --region string            Geographic region to deploy the service
   -v, --release-version string   Release version to deploy
-      --repl-region string       Replica region for the service
       --replicas string          Number of replicas to deploy (default "0")
   -s, --size string              Size of the nodes running the service (default "Sky-2x4")
       --ssl-tls string           Specify whether to use SSL/TLS encryption (default "Enabled")
@@ -36,7 +35,6 @@ Options
       --tier string              Tier in which to provision service
   -t, --topology string          Service topology to select (default "Single Node Transactions")
       --volume-iops string       Amount of IOPS for the volume (e.g. 100). Required for Amazon AWS
-      --volume-type string       Type of volume to use (e.g. io1, gp3). Required for Amazon AWS
 
 Options inherited from parent commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
