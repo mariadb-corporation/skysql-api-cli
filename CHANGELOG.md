@@ -1,3 +1,15 @@
+# v0.0.25 (Mon Jan 03 2022)
+
+#### 🚀 Enhancement
+
+- Introduce new `skysqlcli get allowlist-status` command [#40](https://github.com/mariadb-corporation/skysql-api-cli/pull/40) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 1
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+---
+
 # v0.0.24 (Mon Jan 03 2022)
 
 #### 🚀 Enhancement

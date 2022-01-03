@@ -34,6 +34,7 @@ SEE ALSO
 
 * `skysqlcli <skysqlcli.rst>`_ 	 - CLI client to interact with the SkySQL API
 * `skysqlcli get allowlist <skysqlcli_get_allowlist.rst>`_ 	 - Retrieve list of allowed IPs for a service
+* `skysqlcli get allowlist-status <skysqlcli_get_allowlist-status.rst>`_ 	 - Retrieve status of allowlist for a service
 * `skysqlcli get configurations <skysqlcli_get_configurations.rst>`_ 	 - Retrieve stored service configurations
 * `skysqlcli get credentials <skysqlcli_get_credentials.rst>`_ 	 - Retrieve default service credentials
 * `skysqlcli get providers <skysqlcli_get_providers.rst>`_ 	 - Retrieve list of cloud providers

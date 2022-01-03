@@ -26,6 +26,7 @@ Commands which retrieve data about resources deployed into MariaDB SkySQL
 
 * [skysqlcli](skysqlcli.md)	 - CLI client to interact with the SkySQL API
 * [skysqlcli get allowlist](skysqlcli_get_allowlist.md)	 - Retrieve list of allowed IPs for a service
+* [skysqlcli get allowlist-status](skysqlcli_get_allowlist-status.md)	 - Retrieve status of allowlist for a service
 * [skysqlcli get configurations](skysqlcli_get_configurations.md)	 - Retrieve stored service configurations
 * [skysqlcli get credentials](skysqlcli_get_credentials.md)	 - Retrieve default service credentials
 * [skysqlcli get providers](skysqlcli_get_providers.md)	 - Retrieve list of cloud providers
