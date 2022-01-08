@@ -15,10 +15,6 @@ var (
 		Short: fmt.Sprintf("Update %s for %s", STATUS, SERVICE),
 		Long:  fmt.Sprintf("Updates %s for %s belonging user in MariaDB SkySQL.", STATUS, SERVICE),
 		Args:  cobra.ExactArgs(2),
-		PreRun: func(cmd *cobra.Command, args []string) {
-			viper.BindPFlag(NAME, cmd.Flags().Lookup(NAME))
-			viper.BindPFlag(CONFIG_JSON, cmd.Flags().Lookup(CONFIG_JSON))
-		},
 		Run: func(cmd *cobra.Command, args []string) {
 			serviceID := args[0]
 			status := args[1]
