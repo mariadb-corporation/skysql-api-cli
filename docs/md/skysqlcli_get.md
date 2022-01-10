@@ -18,8 +18,8 @@ Commands which retrieve data about resources deployed into MariaDB SkySQL
 ```
       --api-key string   Long-lived JWT issued from MariaDB ID
   -c, --config string    config file (default $HOME/.skysqlcli.yaml)
-      --host string      URL for the SkySQL API (default "https://api.dev.gcp.mariadb.net")
-      --mdbid string     URL for MariaDB ID (default "https://id-dev.mariadb.com")
+      --host string      URL for the SkySQL API (default "https://api.skysql.net")
+      --mdbid string     URL for MariaDB ID (default "https://id.mariadb.com")
 ```
 
 ### SEE ALSO

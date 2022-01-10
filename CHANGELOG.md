@@ -1,3 +1,20 @@
+# v0.0.26 (Mon Jan 10 2022)
+
+#### 🐛 Bug Fix
+
+- Fix flags, description, remove unused PreRun [#41](https://github.com/mariadb-corporation/skysql-api-cli/pull/41) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### 📝 Documentation
+
+- Update defaults for host and mdbid to point at prod [#42](https://github.com/mariadb-corporation/skysql-api-cli/pull/42) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 2
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.25 (Mon Jan 03 2022)
 
 #### 🚀 Enhancement

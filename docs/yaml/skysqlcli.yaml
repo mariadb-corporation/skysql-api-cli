@@ -13,10 +13,10 @@ options:
   default_value: "false"
   usage: help for skysqlcli
 - name: host
-  default_value: https://api.dev.gcp.mariadb.net
+  default_value: https://api.skysql.net
   usage: URL for the SkySQL API
 - name: mdbid
-  default_value: https://id-dev.mariadb.com
+  default_value: https://id.mariadb.com
   usage: URL for MariaDB ID
 see_also:
 - create - Create a resource in MariaDB SkySQL
