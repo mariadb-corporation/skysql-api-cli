@@ -6,7 +6,6 @@ import (
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 )
 
 var (
