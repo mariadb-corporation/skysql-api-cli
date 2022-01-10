@@ -8,8 +8,8 @@ const (
 
 // URLs
 const (
-	SKYSQL_API = "https://api.dev.gcp.mariadb.net"
-	MARIADB_ID = "https://id-dev.mariadb.com"
+	SKYSQL_API = "https://api.skysql.net"
+	MARIADB_ID = "https://id.mariadb.com"
 )
 
 // Actions
