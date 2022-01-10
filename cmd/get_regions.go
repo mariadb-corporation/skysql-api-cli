@@ -17,7 +17,7 @@ var (
 		Long:    fmt.Sprintf("Retrieves list of %s %s available for use with MariaDB SkySQL", PROVIDER, REGIONS),
 		Args:    cobra.NoArgs,
 		PreRun: func(cmd *cobra.Command, arg []string) {
-			viper.BindPFlag(PROVIDER, cmd.PersistentFlags().Lookup(PROVIDER))
+			viper.BindPFlag(PROVIDER, cmd.Flags().Lookup(PROVIDER))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
@@ -38,5 +38,5 @@ var (
 func init() {
 	getCmd.AddCommand(getRegionCmd)
 
-	getRegionCmd.Flags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, STORAGE, SIZES))
+	getRegionCmd.Flags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s", PROVIDER, REGIONS))
 }
