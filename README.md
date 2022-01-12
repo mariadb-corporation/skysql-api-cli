@@ -1,4 +1,6 @@
-# SkySQL API CLI Client
+# MariaDB SkySQL API CLI Client
+
+> The MariaDB SkySQL DBaaS API CLI Client is a Technical Preview. Software in Tech Preview should not be used for production workloads.
 
 This project contains a command line client for the SkySQL API.
 
