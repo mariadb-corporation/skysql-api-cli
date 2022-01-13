@@ -19,6 +19,8 @@ var (
 		Args:    cobra.MaximumNArgs(1),
 		PreRun: func(cmd *cobra.Command, args []string) {
 			viper.BindPFlag(NAME, cmd.PersistentFlags().Lookup(NAME))
+			viper.BindPFlag(LIMIT, cmd.PersistentFlags().Lookup(LIMIT))
+			viper.BindPFlag(OFFSET, cmd.PersistentFlags().Lookup(OFFSET))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			var res *http.Response
@@ -27,11 +29,13 @@ var (
 				svcid := args[0]
 				res, err = client.ReadService(cmd.Context(), svcid)
 			} else {
-				limit := viper.GetInt("limit")
+				limit := viper.GetInt(LIMIT)
+				offset := viper.GetInt(OFFSET)
 				name := viper.GetString("name")
 				res, err = client.ListServices(cmd.Context(), &skysql.ListServicesParams{
-					Limit: &limit,
-					Name:  &name,
+					Limit:  &limit,
+					Offset: &offset,
+					Name:   &name,
 				})
 			}
 			checkAndPrint(res, err, SERVICES)
@@ -43,4 +47,6 @@ func init() {
 	getCmd.AddCommand(getServiceCmd)
 
 	getServiceCmd.PersistentFlags().StringP(NAME, "n", "", "Search string to match any services containing the name")
+	getServiceCmd.PersistentFlags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, "Number of records to return. Can be used for paginating results in conjuntion with offset.")
+	getServiceCmd.PersistentFlags().IntP(OFFSET, OFFSET_SHORTHAND, DEFAULT_GET_OFFSET, "Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.")
 }

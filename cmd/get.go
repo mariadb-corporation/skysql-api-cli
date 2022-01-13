@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 )
 
 var (
@@ -19,7 +18,4 @@ var (
 
 func init() {
 	rootCmd.AddCommand(getCmd)
-
-	getCmd.PersistentFlags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Number of records to return")
-	viper.BindPFlag("limit", getCmd.PersistentFlags().Lookup("limit"))
 }
