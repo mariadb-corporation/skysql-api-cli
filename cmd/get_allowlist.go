@@ -6,6 +6,7 @@ import (
 
 	skysql "github.com/mariadb-corporation/skysql-api-go"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var (
@@ -20,7 +21,9 @@ var (
 			}
 
 			svcid := args[0]
-			res, err := client.ListAllowedAddresses(cmd.Context(), svcid, &skysql.ListAllowedAddressesParams{})
+			limit := viper.GetInt(LIMIT)
+			offset := viper.GetInt(OFFSET)
+			res, err := client.ListAllowedAddresses(cmd.Context(), svcid, &skysql.ListAllowedAddressesParams{Limit: &limit, Offset: &offset})
 			checkAndPrint(res, err, ALLOWLIST)
 		},
 	}

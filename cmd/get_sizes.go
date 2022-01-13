@@ -23,6 +23,7 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
+			offset := viper.GetInt(OFFSET)
 			serviceType := skysql.ReadSizesParamsServiceType(viper.GetString(SERVICE_TYPE))
 			provider := skysql.SnowProviders(viper.GetString(PROVIDER))
 			tier := skysql.ReadSizesParamsTier(viper.GetString(TIER))
@@ -31,6 +32,7 @@ var (
 			var err error
 			res, err = client.ReadSizes(cmd.Context(), &skysql.ReadSizesParams{
 				Limit:       &limit,
+				Offset:      &offset,
 				ServiceType: serviceType,
 				Provider:    provider,
 				Tier:        tier,

@@ -21,12 +21,14 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
+			offset := viper.GetInt(OFFSET)
 			serviceType := skysql.ReadTopologiesParamsServiceType(viper.GetString(SERVICE_TYPE))
 
 			var res *http.Response
 			var err error
 			res, err = client.ReadTopologies(cmd.Context(), &skysql.ReadTopologiesParams{
 				Limit:       &limit,
+				Offset:      &offset,
 				ServiceType: serviceType,
 			})
 

@@ -28,10 +28,12 @@ var (
 				res, err = client.ReadService(cmd.Context(), svcid)
 			} else {
 				limit := viper.GetInt("limit")
+				offset := viper.GetInt("offset")
 				name := viper.GetString("name")
 				res, err = client.ListServices(cmd.Context(), &skysql.ListServicesParams{
-					Limit: &limit,
-					Name:  &name,
+					Limit:  &limit,
+					Offset: &offset,
+					Name:   &name,
 				})
 			}
 			checkAndPrint(res, err, SERVICES)

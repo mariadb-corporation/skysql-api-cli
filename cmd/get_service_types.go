@@ -18,11 +18,13 @@ var (
 		Args:    cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
+			offset := viper.GetInt(OFFSET)
 
 			var res *http.Response
 			var err error
 			res, err = client.ReadServiceTypes(cmd.Context(), &skysql.ReadServiceTypesParams{
-				Limit: &limit,
+				Limit:  &limit,
+				Offset: &offset,
 			})
 
 			checkAndPrint(res, err, SERVICE_TYPES)

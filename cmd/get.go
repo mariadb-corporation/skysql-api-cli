@@ -20,6 +20,9 @@ var (
 func init() {
 	rootCmd.AddCommand(getCmd)
 
-	getCmd.PersistentFlags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Number of records to return")
+	getCmd.PersistentFlags().IntP("limit", "l", DEFAULT_GET_LIMIT, "Number of records to return. Can be used for paginating results in conjuntion with offset.")
+	getCmd.PersistentFlags().IntP("offset", "o", DEFAULT_GET_OFFSET, "Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.")
+
 	viper.BindPFlag("limit", getCmd.PersistentFlags().Lookup("limit"))
+	viper.BindPFlag("offset", getCmd.PersistentFlags().Lookup("offset"))
 }

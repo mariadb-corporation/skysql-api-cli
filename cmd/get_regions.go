@@ -21,12 +21,14 @@ var (
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
+			offset := viper.GetInt(OFFSET)
 			provider := skysql.SnowProviders(viper.GetString(PROVIDER))
 
 			var res *http.Response
 			var err error
 			res, err = client.ReadRegions(cmd.Context(), &skysql.ReadRegionsParams{
 				Limit:    &limit,
+				Offset:   &offset,
 				Provider: provider,
 			})
 

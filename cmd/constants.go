@@ -64,7 +64,8 @@ const (
 
 // defaults
 const (
-	DEFAULT_GET_LIMIT = 10
+	DEFAULT_GET_LIMIT  = 100
+	DEFAULT_GET_OFFSET = 0
 
 	DEFAULT_CREATE_SERVICE_RELEASE_VERSION = ""
 	DEFAULT_CREATE_SERVICE_TOPOLOGY        = "Single Node Transactions"
@@ -110,6 +111,7 @@ const (
 	MAXSCALE_PROXY  = "maxscale-proxy"
 	MONITOR         = "monitor"
 	NAME            = "name"
+	OFFSET          = "offset"
 	RELEASE_VERSION = "release-version"
 	REPLICAS        = "replicas"
 	REPL_REGION     = "repl-region"
