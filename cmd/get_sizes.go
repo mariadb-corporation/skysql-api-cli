@@ -20,6 +20,8 @@ var (
 			viper.BindPFlag(SERVICE_TYPE, cmd.PersistentFlags().Lookup(SERVICE_TYPE))
 			viper.BindPFlag(PROVIDER, cmd.PersistentFlags().Lookup(PROVIDER))
 			viper.BindPFlag(TIER, cmd.PersistentFlags().Lookup(TIER))
+			viper.BindPFlag(LIMIT, cmd.PersistentFlags().Lookup(LIMIT))
+			viper.BindPFlag(OFFSET, cmd.PersistentFlags().Lookup(OFFSET))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
@@ -49,4 +51,6 @@ func init() {
 	getSizeCmd.PersistentFlags().String(SERVICE_TYPE, "t", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", SERVICE_TYPE, MACHINE, SIZES))
 	getSizeCmd.PersistentFlags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", PROVIDER, MACHINE, SIZES))
 	getSizeCmd.PersistentFlags().String(TIER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s %s", TIER, MACHINE, SIZES))
+	getSizeCmd.PersistentFlags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, "Number of records to return. Can be used for paginating results in conjuntion with offset.")
+	getSizeCmd.PersistentFlags().IntP(OFFSET, OFFSET_SHORTHAND, DEFAULT_GET_OFFSET, "Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.")
 }

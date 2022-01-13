@@ -18,6 +18,8 @@ var (
 		Args:    cobra.NoArgs,
 		PreRun: func(cmd *cobra.Command, arg []string) {
 			viper.BindPFlag(PROVIDER, cmd.Flags().Lookup(PROVIDER))
+			viper.BindPFlag(LIMIT, cmd.PersistentFlags().Lookup(LIMIT))
+			viper.BindPFlag(OFFSET, cmd.PersistentFlags().Lookup(OFFSET))
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			limit := viper.GetInt(LIMIT)
@@ -41,4 +43,6 @@ func init() {
 	getCmd.AddCommand(getRegionCmd)
 
 	getRegionCmd.Flags().String(PROVIDER, "", fmt.Sprintf("MariaDB SkySQL %s to query for %s", PROVIDER, REGIONS))
+	getRegionCmd.PersistentFlags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, "Number of records to return. Can be used for paginating results in conjuntion with offset.")
+	getRegionCmd.PersistentFlags().IntP(OFFSET, OFFSET_SHORTHAND, DEFAULT_GET_OFFSET, "Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.")
 }

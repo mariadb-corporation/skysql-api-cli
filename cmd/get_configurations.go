@@ -17,6 +17,9 @@ var (
 		Short:   fmt.Sprintf("Retrieve stored %s %s", SERVICE, CONFIGURATIONS),
 		Long:    fmt.Sprintf("Retrieves one or more custom %s %s owned by the user", SERVICE, CONFIGURATIONS),
 		Args:    cobra.MaximumNArgs(1),
+		PreRun: func(cmd *cobra.Command, arg []string) {
+			viper.BindPFlag(LIMIT, cmd.PersistentFlags().Lookup(LIMIT))
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			var res *http.Response
 			var err error
@@ -37,4 +40,6 @@ var (
 
 func init() {
 	getCmd.AddCommand(getConfigurationCmd)
+
+	getConfigurationCmd.PersistentFlags().IntP(LIMIT, LIMIT_SHORTHAND, DEFAULT_GET_LIMIT, "Number of records to return. Can be used for paginating results in conjuntion with offset.")
 }
