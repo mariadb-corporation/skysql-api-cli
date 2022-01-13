@@ -7,10 +7,6 @@ options:
   shorthand: h
   default_value: "false"
   usage: help for get
-- name: limit
-  shorthand: l
-  default_value: "10"
-  usage: Number of records to return
 inherited_options:
 - name: api-key
   usage: Long-lived JWT issued from MariaDB ID

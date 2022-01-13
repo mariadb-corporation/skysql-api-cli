@@ -8,6 +8,16 @@ options:
   shorthand: h
   default_value: "false"
   usage: help for versions
+- name: limit
+  shorthand: l
+  default_value: "100"
+  usage: |
+    Number of records to return. Can be used for paginating results in conjuntion with offset.
+- name: offset
+  shorthand: o
+  default_value: "0"
+  usage: |
+    Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.
 inherited_options:
 - name: api-key
   usage: Long-lived JWT issued from MariaDB ID
@@ -17,10 +27,6 @@ inherited_options:
 - name: host
   default_value: https://api.skysql.net
   usage: URL for the SkySQL API
-- name: limit
-  shorthand: l
-  default_value: "10"
-  usage: Number of records to return
 - name: mdbid
   default_value: https://id.mariadb.com
   usage: URL for MariaDB ID

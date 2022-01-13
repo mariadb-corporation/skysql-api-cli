@@ -16,8 +16,7 @@ Options
 
 ::
 
-  -h, --help        help for get
-  -l, --limit int   Number of records to return (default 10)
+  -h, --help   help for get
 
 Options inherited from parent commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

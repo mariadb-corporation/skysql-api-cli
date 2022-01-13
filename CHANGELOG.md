@@ -1,3 +1,20 @@
+# v0.0.27 (Thu Jan 13 2022)
+
+#### 🚀 Enhancement
+
+- Add offset, update default limit [#44](https://github.com/mariadb-corporation/skysql-api-cli/pull/44) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### 📝 Documentation
+
+- Add Apache license and technical preview blurb [#43](https://github.com/mariadb-corporation/skysql-api-cli/pull/43) ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+
+#### Authors: 2
+
+- Don Mayo ([@mariadb-DonMayo](https://github.com/mariadb-DonMayo))
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.26 (Mon Jan 10 2022)
 
 #### 🐛 Bug Fix

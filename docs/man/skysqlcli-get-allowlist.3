@@ -21,6 +21,14 @@ Queries for list of allowed IP addresses for a specific service
 \fB\-h\fP, \fB\-\-help\fP[=false]
 	help for allowlist
 
+.PP
+\fB\-l\fP, \fB\-\-limit\fP=100
+	Number of records to return. Can be used for paginating results in conjuntion with offset.
+
+.PP
+\fB\-o\fP, \fB\-\-offset\fP=0
+	Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.
+
 
 .SH OPTIONS INHERITED FROM PARENT COMMANDS
 .PP
@@ -34,10 +42,6 @@ Queries for list of allowed IP addresses for a specific service
 .PP
 \fB\-\-host\fP="https://api.skysql.net"
 	URL for the SkySQL API
-
-.PP
-\fB\-l\fP, \fB\-\-limit\fP=10
-	Number of records to return
 
 .PP
 \fB\-\-mdbid\fP="https://id.mariadb.com"

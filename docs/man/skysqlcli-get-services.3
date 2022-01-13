@@ -22,8 +22,16 @@ Queries for information about deployed service resources in SkySQL. Specify a se
 	help for services
 
 .PP
+\fB\-l\fP, \fB\-\-limit\fP=100
+	Number of records to return. Can be used for paginating results in conjuntion with offset.
+
+.PP
 \fB\-n\fP, \fB\-\-name\fP=""
 	Search string to match any services containing the name
+
+.PP
+\fB\-o\fP, \fB\-\-offset\fP=0
+	Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.
 
 
 .SH OPTIONS INHERITED FROM PARENT COMMANDS
@@ -38,10 +46,6 @@ Queries for information about deployed service resources in SkySQL. Specify a se
 .PP
 \fB\-\-host\fP="https://api.skysql.net"
 	URL for the SkySQL API
-
-.PP
-\fB\-l\fP, \fB\-\-limit\fP=10
-	Number of records to return
 
 .PP
 \fB\-\-mdbid\fP="https://id.mariadb.com"

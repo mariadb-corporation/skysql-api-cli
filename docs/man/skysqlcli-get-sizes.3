@@ -22,6 +22,14 @@ Retrieves list of machine sizes available for use with MariaDB SkySQL
 	help for sizes
 
 .PP
+\fB\-l\fP, \fB\-\-limit\fP=100
+	Number of records to return. Can be used for paginating results in conjuntion with offset.
+
+.PP
+\fB\-o\fP, \fB\-\-offset\fP=0
+	Number of records to skip when retrieved. Can be used for paginating results in conjunction with limit.
+
+.PP
 \fB\-\-provider\fP=""
 	MariaDB SkySQL provider to query for machine sizes
 
@@ -46,10 +54,6 @@ Retrieves list of machine sizes available for use with MariaDB SkySQL
 .PP
 \fB\-\-host\fP="https://api.skysql.net"
 	URL for the SkySQL API
-
-.PP
-\fB\-l\fP, \fB\-\-limit\fP=10
-	Number of records to return
 
 .PP
 \fB\-\-mdbid\fP="https://id.mariadb.com"
