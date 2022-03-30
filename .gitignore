@@ -2,3 +2,5 @@ skysqlcli
 skysqlcli-linux
 skysqlcli-macos
 skysqlcli-windows.exe
+*.dmg
+*.zip

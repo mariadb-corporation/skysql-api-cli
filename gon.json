@@ -1,0 +1,17 @@
+{
+    "source" : ["./skysqlcli-macos"],
+    "bundle_id" : "com.mariadb.skysqlcli-macos",
+    "apple_id": {
+        "password":  "@env:AC_PASSWORD"
+    },
+    "sign" :{
+        "application_identity" : "Developer ID Application: MariaDB Corporation Ab (V98QZV356S)"
+    },
+    "dmg" :{
+        "output_path":  "./skysqlcli-macos.dmg",
+        "volume_name":  "skysqlcli-macos"
+    },
+    "zip" :{
+        "output_path" : "./skysqlcli-macos.zip"
+    }
+}

@@ -81,12 +81,54 @@ jobs:
       - name: Log version
         run: |
           ./${{ matrix.artifact }} --version
+  sign:
+    name: Sign Binaries
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 5
+    runs-on: macos-latest
+    needs: [artifacts]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with: # https://stackoverflow.com/a/65081720
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: "0"
+      - name: macos binary
+        id: macos-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-macos/
+          key: macos-binary-${{ github.sha }}
+      - name: Import Code-Signing Certificates
+        uses: Apple-Actions/import-codesign-certs@v1
+        with:
+          p12-file-base64: ${{ secrets.APPLE_DEVELOPER_CERTIFICATE_P12_BAS64 }}
+          p12-password: ${{ secrets.APPLE_DEVELOPER_CERTIFICATE_PASSWORD }}
+      - name: Install gon
+        run: |
+          brew tap metchellh/gon
+          brew install mitchellh/gon/gon
+      - name: Sign the mac binaries with Gon
+        env:
+          AC_USERNAME: ${{ secrets.AC_USERNAME }}
+          AC_PASSWORD: ${{ secrets.AC_PASSWORD }}
+        run: |
+          make sign
+      - name: Zip release
+        run: |
+          zip -r skysqlcli-macos.zip skysqlcli-macos/
+      - name: Cache signed binary 
+        id: cache-signed-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-macos/
+          key: macos-binary-${{ github.sha }}
   release:
     name: Publish new release
     if: github.ref == 'refs/heads/main'
     timeout-minutes: 5
     runs-on: ubuntu-latest
-    needs: [artifacts]
+    needs: sign
     outputs:
       version: ${{ steps.version.outputs.version }}
     steps:
