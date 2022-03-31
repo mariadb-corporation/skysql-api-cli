@@ -114,15 +114,18 @@ jobs:
           AC_PASSWORD: ${{ secrets.AC_PASSWORD }}
         run: |
           make sign
-      - name: Zip release
-        run: |
-          zip -r skysqlcli-macos.zip skysqlcli-macos/
-      - name: Cache signed binary 
+      - name: Cache signed binary zip
         id: cache-signed-binary
         uses: actions/cache@v2
         with:
-          path: skysqlcli-macos/
-          key: macos-binary-${{ github.sha }}
+          path: skysqlcli-macos.zip
+          key: macos-binary-zip-${{ github.sha }}
+      - name: Cache signed binary dmg
+        id: cache-signed-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-macos.dmg
+          key: macos-binary-dmg-${{ github.sha }}
   release:
     name: Publish new release
     if: github.ref == 'refs/heads/main'
@@ -154,12 +157,18 @@ jobs:
         with:
           path: skysqlcli-linux
           key: linux-binary-${{ github.sha }}
-      - name: macos binary
+      - name: macos binary zip
         id: macos-binary
         uses: actions/cache@v2
         with:
-          path: skysqlcli-macos
-          key: macos-binary-${{ github.sha }}
+          path: skysqlcli-macos.zip
+          key: macos-binary-zip-${{ github.sha }}
+      - name: macos binary dmg
+        id: macos-binary
+        uses: actions/cache@v2
+        with:
+          path: skysqlcli-macos.dmg
+          key: macos-binary-dmg-${{ github.sha }}
       - name: windows binary
         id: windows-binary
         uses: actions/cache@v2
