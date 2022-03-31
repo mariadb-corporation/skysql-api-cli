@@ -8,7 +8,7 @@
         "beforeCommitChangelog": "make docs && git add ."
       }
     ],
-    ["upload-assets", ["./skysqlcli-linux", "./skysqlcli-macos", "./skysqlcli-windows.exe"]]
+    ["upload-assets", ["./skysqlcli-linux", "./skysqlcli-macos.dmg", "./skysqlcli-macos.zip", "./skysqlcli-windows.exe"]]
   ],
   "owner": "mariadb-corporation",
   "repo": "skysql-api-cli",
