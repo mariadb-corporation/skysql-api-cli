@@ -115,13 +115,13 @@ jobs:
         run: |
           make sign
       - name: Cache signed binary zip
-        id: cache-signed-binary
+        id: cache-signed-binary-zip
         uses: actions/cache@v2
         with:
           path: skysqlcli-macos.zip
           key: macos-binary-zip-${{ github.sha }}
       - name: Cache signed binary dmg
-        id: cache-signed-binary
+        id: cache-signed-binary-dmg
         uses: actions/cache@v2
         with:
           path: skysqlcli-macos.dmg
@@ -158,13 +158,13 @@ jobs:
           path: skysqlcli-linux
           key: linux-binary-${{ github.sha }}
       - name: macos binary zip
-        id: macos-binary
+        id: macos-binary-zip
         uses: actions/cache@v2
         with:
           path: skysqlcli-macos.zip
           key: macos-binary-zip-${{ github.sha }}
       - name: macos binary dmg
-        id: macos-binary
+        id: macos-binary-dmg
         uses: actions/cache@v2
         with:
           path: skysqlcli-macos.dmg
