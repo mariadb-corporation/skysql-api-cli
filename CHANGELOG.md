@@ -1,3 +1,22 @@
+# v0.0.28 (Thu Mar 31 2022)
+
+#### 🐛 Bug Fix
+
+- Add unique identifiers [#49](https://github.com/mariadb-corporation/skysql-api-cli/pull/49) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Remove zip step, update release pipeline [#48](https://github.com/mariadb-corporation/skysql-api-cli/pull/48) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Remove trailing slash [#47](https://github.com/mariadb-corporation/skysql-api-cli/pull/47) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+- Fix typos [#46](https://github.com/mariadb-corporation/skysql-api-cli/pull/46) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### 🚢 DevOps
+
+- Add gon to actions for signing macOS binary [#45](https://github.com/mariadb-corporation/skysql-api-cli/pull/45) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.27 (Thu Jan 13 2022)
 
 #### 🚀 Enhancement
