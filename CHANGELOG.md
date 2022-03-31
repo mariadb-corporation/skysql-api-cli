@@ -1,3 +1,15 @@
+# v0.0.29 (Thu Mar 31 2022)
+
+#### 🚢 DevOps
+
+- Add dmg and zip to .autorc [#50](https://github.com/mariadb-corporation/skysql-api-cli/pull/50) ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+#### Authors: 1
+
+- John Halbert ([@mariadb-JohnHalbert](https://github.com/mariadb-JohnHalbert))
+
+---
+
 # v0.0.28 (Thu Mar 31 2022)
 
 #### 🐛 Bug Fix
